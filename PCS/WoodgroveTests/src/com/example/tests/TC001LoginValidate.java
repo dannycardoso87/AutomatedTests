@@ -22,18 +22,20 @@ public class TC001LoginValidate {
 	
 	
   private WebDriver driver;
-  private String baseUrl = "https://192.168.1.202:3003";
+  //private String baseUrl = "https://192.168.1.202:3003";
+  private String baseUrl;
   //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   //private final String pathChromeDriver = "C:\\Users\\Woodgrove\\chromedriver.exe";
-  private final String pathChromeDriver = "C:\\Projects\\AutomationTests\\PCS\\WoodgroveTests\\Package\\chromedriver.exe";
+  //private final String pathChromeDriver = "C:\\Projects\\AutomationTests\\PCS\\WoodgroveTests\\Package\\chromedriver.exe";
+  private final String pathChromeDriver =  "C:\\PCSNightlyBuild\\AutomatedTests\\chromedriver.exe"; 
   
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
 	System.setProperty("webdriver.chrome.driver", pathChromeDriver);
     driver = new ChromeDriver();
     driver.manage().window().maximize();
-    //baseUrl = "https://localhost:3002/#/login";
+    baseUrl = "https://localhost:3002/#/login";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
