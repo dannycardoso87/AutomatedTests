@@ -6,8 +6,6 @@
       <class name="src.com.example.tests.TC001LoginValidate">
         <methods>
           <include name="testTC001LoginValidate"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- src.com.example.tests.TC001LoginValidate -->
     </classes>
