@@ -54,9 +54,9 @@ public class TC001LoginValidatePCS {
 		    driver.findElement(By.id("pcspass")).sendKeys("test");
 		    //Submit
 		    driver.findElement(By.id("btnSubmit")).click();
-		    Thread.sleep(5000);
-		    //Click Logout button
-		    driver.findElement(By.id("btnLogout")).click();
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnLogout")));
+		    element.click();
 		 }
 		
 		  @AfterClass(alwaysRun = true)

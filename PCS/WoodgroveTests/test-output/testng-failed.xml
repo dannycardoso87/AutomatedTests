@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="src.com.example.tests.TestCamera">
+      <class name="src.com.example.tests.TC0015CreateDisplayGroupPOP">
         <methods>
-          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="testTC002CreateNode"/>
+          <include name="testTC0015CreateDisplayGroupPOP"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- src.com.example.tests.TestCamera -->
+      </class> <!-- src.com.example.tests.TC0015CreateDisplayGroupPOP -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

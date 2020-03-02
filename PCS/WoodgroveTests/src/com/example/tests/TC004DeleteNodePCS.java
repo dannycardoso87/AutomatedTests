@@ -55,21 +55,42 @@ public class TC004DeleteNodePCS {
 	driver.findElement(By.id("btnSubmit")).click();
 	//Create node1 
 	driver.findElement(By.id("btnCreateNode")).click();
-	Thread.sleep(2000);
-    assertEquals(driver.findElement(By.id("nodeMsgModal")).getText(), "Node id cannot be empty.");
+		/*
+		 * Thread.sleep(2000);
+		 * assertEquals(driver.findElement(By.id("nodeMsgModal")).getText(),
+		 * "Node id cannot be empty.");
+		 */
+	
+    WebElement text = driver.findElement(By.id("nodeMsgModal"));
+    Boolean m = new WebDriverWait(driver, 10).until(ExpectedConditions.textToBePresentInElement(text,"Node id cannot be empty."));
+    if(m.equals(true)) {
+    	System.out.println("Node id cannot be empty.");
+    }
+    
     driver.findElement(By.id("newNodeForm")).clear();	
     driver.findElement(By.id("newNodeForm")).sendKeys(nodeId);
-    //5s explicit wait
-    Thread.sleep(5000);
-    //Click the Submit button
-    driver.findElement(By.id("btnSubmitNewNode")).click();
+    
+		/*
+		 * //5s explicit wait Thread.sleep(5000); //Click the Submit button
+		 * driver.findElement(By.id("btnSubmitNewNode")).click();
+		 */
+    Thread.sleep(1000);
+	WebDriverWait wait = new WebDriverWait(driver, 10);
+	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
+    element.click();    
     //30s explicit wait and close alert
     new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
     driver.switchTo().alert().accept();
-    //5s explicit wait
-    Thread.sleep(5000);   
-    //Click cancel button
-    driver.findElement(By.id("btnCancelNewNode")).click();   
+    
+		/*
+		 * //5s explicit wait Thread.sleep(5000); //Click cancel button
+		 * driver.findElement(By.id("btnCancelNewNode")).click();
+		 */
+    Thread.sleep(1000);
+	WebDriverWait wait2 = new WebDriverWait(driver, 10);
+	WebElement element2 = wait2.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
+    element2.click(); 
+    
     //Identify the inserted node and click on the edit button
     List <WebElement> listOfElements = driver.findElements(By.id("tableNode"));
     System.out.println("Number of elements:" +listOfElements.size());
@@ -79,10 +100,16 @@ public class TC004DeleteNodePCS {
     	String nodeName = elements.getText().toString();   	
     	if(nodeName.equals(nodeId)) {
     		System.out.println(nodeName);
-    		Thread.sleep(5000);
-    		WebElement button = elements2.findElement(By.id("btnEditNodeID"));
-    		Thread.sleep(5000);
-    		button.click();
+				/*
+				 * Thread.sleep(5000); 
+				 * WebElement button = elements2.findElement(By.id("btnEditNodeID")); 
+				 * Thread.sleep(5000);
+				 * button.click();
+				 */
+    		Thread.sleep(1000);
+    		WebDriverWait wait3 = new WebDriverWait(driver, 10);
+    		elements2 = wait3.until(ExpectedConditions.elementToBeClickable(By.id("btnEditNodeID")));
+    	    elements2.click();      		
     		break;
     	}    	    	
     } 	  
@@ -94,20 +121,33 @@ public class TC004DeleteNodePCS {
     for (int i=0; i < listOfElements2.size();i++){
     	WebElement elements3 =  listOfElements2.get(i).findElement(By.id("tableGroupNodeID"));
     	String nodeName2 = elements3.getText().toString();  
-    	if(nodeName2.equals(nodeId+"\nEdit\nStop")) {
+    	if(nodeName2.equals(nodeId)) {
     		System.out.println(nodeName2);
-    		WebElement button = elements3.findElement(By.id("btnDeleteNode"));
-    		button.click();
+    		Thread.sleep(5000); 
+    		WebElement button = elements3.findElement(By.id("btnDeleteNode")); 
+    		button.click();    		
+				/*
+				 * Thread.sleep(1000); WebDriverWait wait4 = new WebDriverWait(driver, 10);
+				 * elements3 =
+				 * wait4.until(ExpectedConditions.elementToBeClickable(By.id("btnDeleteNode")));
+				 * elements3.click();
+				 */
+    		
     		Thread.sleep(5000); 
     	    new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
     	    driver.switchTo().alert().accept(); 
     		break;
     		}    	    	
     	}
-    //5s explicit wait
-    Thread.sleep(5000);
-    //Click Logout button
-    driver.findElement(By.id("btnLogout")).click();
+		/*
+		 * //5s explicit wait Thread.sleep(5000); //Click Logout button
+		 * driver.findElement(By.id("btnLogout")).click();
+		 */
+    
+    Thread.sleep(1000);
+	wait = new WebDriverWait(driver, 10);
+	element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnLogout")));
+    element.click();
     }
 
   @AfterClass(alwaysRun = true)

@@ -46,13 +46,14 @@ public class TC0011LoginValidatePOP {
 			driver.findElement(By.id("pcspass")).clear();
 			driver.findElement(By.id("pcspass")).sendKeys("test2");
 			//Submit
-			driver.findElement(By.className("btn btn-primary")).click();
+			driver.findElement(By.id("btnSubmit")).click();
 			Thread.sleep(2000);
-			assertEquals(driver.findElement(By.className("error")).getText(), "LOGIN FAILED! Please verify the Username and Password.");
+			assertEquals(driver.findElement(By.className("error")).getText(), "LOGIN FAILED! Please verify the Username and Password. ");
 		    driver.findElement(By.id("pcspass")).clear();
 		    driver.findElement(By.id("pcspass")).sendKeys("test");
 		    //Submit
 		    driver.findElement(By.id("btnSubmit")).click();
+		    
 		 }
 		
 		  @AfterClass(alwaysRun = true)

@@ -66,7 +66,7 @@ public void setUp() throws Exception {
     	WebElement elements2 = listOfElements.get(i).findElement(By.id("cycleTime"));
     	String cycleTime1 = elements2.getText().toString();   
     	System.out.println(cycleTime1); 
-    	Thread.sleep(7000);
+    	Thread.sleep(10000);
     	String cycleTime2 = elements2.getText().toString();   
     	System.out.println(cycleTime2);     	
     	//Check nodes status
@@ -122,7 +122,7 @@ public void setUp() throws Exception {
     	WebElement elements2 = listOfElements2.get(i).findElement(By.id("cycleTime"));
     	String cycleTime1 = elements2.getText().toString();   
     	System.out.println(cycleTime1); 
-    	Thread.sleep(7000);
+    	Thread.sleep(10000);
     	String cycleTime2 = elements2.getText().toString();   
     	System.out.println(cycleTime2); 
     	
