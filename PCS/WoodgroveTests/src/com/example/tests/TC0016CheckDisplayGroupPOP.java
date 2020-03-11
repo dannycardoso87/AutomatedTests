@@ -66,21 +66,16 @@ public class TC0016CheckDisplayGroupPOP {
 		    }
 		    List <WebElement> listOfElements2 = driver.findElements(By.id("groupDisplay"));
 		    System.out.println("Number of elements:" +listOfElements2.size());
-		    for (int i=0; i < listOfElements2.size();i++){
-		    	WebElement camView =  listOfElements2.get(i).findElement(By.id("nameCamView"));
-		    	String nameCamView = camView.getText().toString();	    	
-		    	if(nameCamView.equals("nodePFC3")) {
-		    		System.out.println(nameCamView);
-		    	}else {
-		    		fail();
-		    	}
-		    	if(nameCamView.equals("nodePFC2")) {
-		    		System.out.println(nameCamView);
-		    	}else {
-		    		fail();
-		    	}
+		    if(listOfElements2.isEmpty()) {
+		    	System.out.println("Number of elements:" +listOfElements2.size());
+		    	fail();
 		    }
 		    
+		    for (int i=0; i < listOfElements2.size();i++){
+		    	WebElement camView =  listOfElements2.get(i).findElement(By.id("nameCamView"));
+		    	String nameCamView = camView.getText().toString();	
+		    		System.out.println(nameCamView);   	
+		    }		    
 		 }
 		
 		  @AfterClass(alwaysRun = true)

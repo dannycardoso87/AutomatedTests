@@ -71,7 +71,7 @@ public class TC0015CreateDisplayGroupPOP {
     		driver.findElement(By.id("viewType")).sendKeys(" Display ");
     		driver.findElement(By.id("viewType")).click();
 			driver.findElement(By.id("groupSearchCam")).clear();
-			driver.findElement(By.id("groupSearchCam")).sendKeys("n");			
+			driver.findElement(By.id("groupSearchCam")).sendKeys("PFC");			
 			
 			List <WebElement> listOfElements = driver.findElements(By.id("tableSearchCameras"));
 		    System.out.println("Number of elements:" +listOfElements.size());
@@ -94,7 +94,7 @@ public class TC0015CreateDisplayGroupPOP {
 		    }
 		    
 		    driver.findElement(By.id("groupSearchCam")).clear();
-			driver.findElement(By.id("groupSearchCam")).sendKeys("n");			
+			driver.findElement(By.id("groupSearchCam")).sendKeys("PRC");			
 			
 			List <WebElement> listOfElements2 = driver.findElements(By.id("tableSearchCameras"));
 		    System.out.println("Number of elements:" +listOfElements2.size());

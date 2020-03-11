@@ -59,8 +59,6 @@ public class TC007StatusCheckPCS {
 	    	Thread.sleep(10000);
 	    	String cycleTime2 = elements2.getText().toString();   
 	    	System.out.println(cycleTime2); 
-	    		    	 	
-	    	//Check nodes status
 	    	if(nodeName.equals("nodePFC")) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {

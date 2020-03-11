@@ -40,7 +40,7 @@ public class TC006EditNodeCameraIpPCS {
 	  }
 
   @Test
-  public void testTC006ModifyNodeCameraIp() throws Exception {
+  public void testTC006EditNodeCameraIpPCS() throws Exception {
 		driver.get(baseUrl + "#/login");
 		driver.findElement(By.id("pcsusername")).clear();
 		driver.findElement(By.id("pcsusername")).sendKeys("Superuser");

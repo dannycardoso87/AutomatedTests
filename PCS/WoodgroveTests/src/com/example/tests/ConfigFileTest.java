@@ -16,9 +16,9 @@ public class ConfigFileTest {
 		testSuite.setTestClasses(new Class[] { ConfigFileTest.class });
 		testSuite.run();
 	}		
-	private WebDriver driver;
-	private String baseUrl;
-	private StringBuffer verificationErrors = new StringBuffer();
+	private static WebDriver driver;
+	private static String baseUrl;
+	private static StringBuffer verificationErrors = new StringBuffer();
 	//Tests local
 	private final String pathChromeDriver = "C:\\Projects\\AutomatedTests\\Package\\chromedriver.exe";
 	//Test VM

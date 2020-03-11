@@ -4,7 +4,6 @@ import org.testng.TestNG;
 import org.testng.annotations.*;
 import static org.testng.Assert.fail;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
@@ -66,7 +65,7 @@ public class TC0013CreateNewCamerasPOP {
 		    }			
 			
 			driver.findElement(By.id("cameraId")).clear();
-			driver.findElement(By.id("cameraId")).sendKeys("nodePFC2");
+			driver.findElement(By.id("cameraId")).sendKeys("Camera1");
 			driver.findElement(By.id("cameraUsername")).clear();
 			driver.findElement(By.id("cameraUsername")).sendKeys("admin");
 			driver.findElement(By.id("cameraPassword")).clear();

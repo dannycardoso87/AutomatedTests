@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="32789" started-at="2020-02-05T11:12:26 EST" finished-at="2020-02-05T11:12:59 EST">
+  <suite name="Command line suite" duration-ms="156541" started-at="2020-03-11T10:25:54 EDT" finished-at="2020-03-11T10:28:30 EDT">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="32789" started-at="2020-02-05T11:12:26 EST" finished-at="2020-02-05T11:12:59 EST">
-      <class name="src.com.example.tests.TC003CreateExistingNode">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:src.com.example.tests.TC003CreateExistingNode@5e4bd84a]" name="setUp" is-config="true" duration-ms="9068" started-at="2020-02-05T11:12:26 EST" finished-at="2020-02-05T11:12:35 EST">
+    <test name="Command line test" duration-ms="156541" started-at="2020-03-11T10:25:54 EDT" finished-at="2020-03-11T10:28:30 EDT">
+      <class name="src.com.example.tests.RegressionTestPCS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="setUp" is-config="true" duration-ms="9459" started-at="2020-03-11T10:25:54 EDT" finished-at="2020-03-11T10:26:03 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testTC003CreateExistingNode()[pri:0, instance:src.com.example.tests.TC003CreateExistingNode@5e4bd84a]" name="testTC003CreateExistingNode" duration-ms="23131" started-at="2020-02-05T11:12:35 EST" finished-at="2020-02-05T11:12:58 EST">
+        <test-method status="PASS" signature="TC001loginValidatePCS()[pri:1, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="TC001loginValidatePCS" duration-ms="1721" started-at="2020-03-11T10:26:03 EDT" finished-at="2020-03-11T10:26:05 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testTC003CreateExistingNode -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:src.com.example.tests.TC003CreateExistingNode@5e4bd84a]" name="tearDown" is-config="true" duration-ms="589" started-at="2020-02-05T11:12:58 EST" finished-at="2020-02-05T11:12:59 EST">
+        </test-method> <!-- TC001loginValidatePCS -->
+        <test-method status="PASS" signature="TC002createNodePCS()[pri:2, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="TC002createNodePCS" duration-ms="3522" started-at="2020-03-11T10:26:05 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC001loginValidatePCS" finished-at="2020-03-11T10:26:09 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC002createNodePCS -->
+        <test-method status="PASS" signature="TC003createExistingNode()[pri:3, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="TC003createExistingNode" duration-ms="989" started-at="2020-03-11T10:26:09 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC002createNodePCS" finished-at="2020-03-11T10:26:10 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC003createExistingNode -->
+        <test-method status="PASS" signature="TC004deleteNode()[pri:4, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="TC004deleteNode" duration-ms="20082" started-at="2020-03-11T10:26:10 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC003createExistingNode" finished-at="2020-03-11T10:26:30 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC004deleteNode -->
+        <test-method status="PASS" signature="TC005editNode()[pri:5, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="TC005editNode" duration-ms="120175" started-at="2020-03-11T10:26:30 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC004deleteNode" finished-at="2020-03-11T10:28:30 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC005editNode -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:src.com.example.tests.RegressionTestPCS@d7b1517]" name="tearDown" is-config="true" duration-ms="576" started-at="2020-03-11T10:28:30 EDT" finished-at="2020-03-11T10:28:30 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- src.com.example.tests.TC003CreateExistingNode -->
+      </class> <!-- src.com.example.tests.RegressionTestPCS -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

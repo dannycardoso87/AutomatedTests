@@ -66,13 +66,13 @@ public class TC0014DeleteCameraPOP {
 		    for (int i=0; i < listOfElements.size();i++){
 		    	WebElement btnDeleteCam =  listOfElements.get(i).findElement(By.id("nameBtnDeleteCam"));
 		    	String titleBtnCam = btnDeleteCam.getAttribute("title").toString();
-		    	if(titleBtnCam.equals("Delete [nodePFC2]")) {
+		    	if(titleBtnCam.equals("Delete [Camera1]")) {
 		    		System.out.println(titleBtnCam);
 		    		btnDeleteCam.click();
 		    	    new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
 		    	    driver.switchTo().alert().accept(); 
 		    	}else {
-		    		System.out.println("Didn't find the node");
+		    		System.out.println("Didn't find the camera");
 		    		fail();
 		    	}
 		    }			

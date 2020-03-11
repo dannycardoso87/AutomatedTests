@@ -3,13 +3,17 @@
 <suite name="Failed suite [Command line suite]">
   <test thread-count="5" name="Command line test(failed)">
     <classes>
-      <class name="src.com.example.tests.TC003CreateExistingNode">
+      <class name="src.com.example.tests.RegressionTestPCS">
         <methods>
-          <include name="testTC003CreateExistingNode"/>
+          <include name="TC003createExistingNode"/>
+          <include name="TC001loginValidatePCS"/>
+          <include name="TC005editNode"/>
+          <include name="TC004deleteNode"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="TC002createNodePCS"/>
         </methods>
-      </class> <!-- src.com.example.tests.TC003CreateExistingNode -->
+      </class> <!-- src.com.example.tests.RegressionTestPCS -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

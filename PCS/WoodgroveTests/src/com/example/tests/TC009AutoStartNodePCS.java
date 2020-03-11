@@ -40,7 +40,7 @@ public void setUp() throws Exception {
   }
 
   @Test
-  public void testTC008StopSchedulerAllNodes() throws Exception {
+  public void testTC009AutoStartNodePCS() throws Exception {
 	driver.get(baseUrl + "#/login");
 	driver.findElement(By.id("pcsusername")).clear();
 	driver.findElement(By.id("pcsusername")).sendKeys("Superuser");

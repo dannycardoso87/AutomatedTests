@@ -3,13 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="src.com.example.tests.TC0015CreateDisplayGroupPOP">
+      <class name="src.com.example.tests.RegressionTestPCS">
         <methods>
-          <include name="tearDown"/>
-          <include name="testTC0015CreateDisplayGroupPOP"/>
+          <include name="TC001loginValidatePCS"/>
+          <include name="TC006statusCheck"/>
+          <include name="T008autoStartNodePCS"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="T007stopSchedulerAllNodes"/>
         </methods>
-      </class> <!-- src.com.example.tests.TC0015CreateDisplayGroupPOP -->
+      </class> <!-- src.com.example.tests.RegressionTestPCS -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
