@@ -40,7 +40,7 @@ public void setUp() throws Exception {
   }
 
   @Test
-  public void testTC008StopSchedulerAllNodes() throws Exception {
+  public void testTC010DeleteAllNodesPCS() throws Exception {
 	driver.get(baseUrl + "#/login");
 	driver.findElement(By.id("pcsusername")).clear();
 	driver.findElement(By.id("pcsusername")).sendKeys("Superuser");
@@ -48,79 +48,105 @@ public void setUp() throws Exception {
 	driver.findElement(By.id("pcspass")).sendKeys("test");  
 	driver.findElement(By.id("btnSubmit")).click();
 	
-	//Delete nodePRC
-	List <WebElement> listOfElements = driver.findElements(By.id("tableNode"));
-    System.out.println("Number of elements:" +listOfElements.size());
-    for (int i=0; i < listOfElements.size();i++){
-    	WebElement elements =  listOfElements.get(i).findElement(By.id("tableNodeID"));
-    	WebElement elements2 =  listOfElements.get(i).findElement(By.id("btnEditNode"));
-    	String nodeName = elements.getText().toString();   	
+	WebDriverWait wait = new WebDriverWait(driver, 30);	
+	String link = driver.findElement(By.id("btnHome")).getAttribute("href");  
+	
+	List <WebElement> tableNode = driver.findElements(By.id("tableNode"));
+    System.out.println("Number of elements:" +tableNode.size());
+    for (int i=0; i < tableNode.size();i++){
+    	WebElement tableNodeID =  tableNode.get(i).findElement(By.id("tableNodeID"));
+    	WebElement btnEditNode =  tableNode.get(i).findElement(By.id("btnEditNode"));
+    	String nodeName = tableNodeID.getText().toString();   	
     	if(nodeName.equals("nodePRC")) {
-    		System.out.println(nodeName);
-    		Thread.sleep(5000);
-    		WebElement button = elements2.findElement(By.id("btnEditNodeID"));
-    		Thread.sleep(5000);
-    		button.click();
-    		//5s explicit wait
-            Thread.sleep(5000);    
-            //Identify the node in the list on the left and click the delete button
-            List <WebElement> listOfElements2 = driver.findElements(By.id("tableGroupNode"));
-            System.out.println("Number of elements:" +listOfElements2.size());
-            for (int j=0; j < listOfElements2.size();j++){
-            	WebElement elements3 =  listOfElements2.get(j).findElement(By.id("tableGroupNodeID"));
-            	String nodeName2 = elements3.getText().toString();  
+    		System.out.println(nodeName);    		
+    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(btnEditNode));
+    		btnEditNodeID.click();    		
+            List <WebElement> tableGroupNode = driver.findElements(By.id("tableGroupNode"));
+            System.out.println("Number of elements:" +tableGroupNode.size());
+            for (int j=0; j < tableGroupNode.size();j++){
+            	WebElement tableGroupNodeID =  tableGroupNode.get(j).findElement(By.id("tableGroupNodeID"));
+            	String nodeName2 = tableGroupNodeID.getText().toString();  
             	if(nodeName2.contains("nodePRC")) {
             		System.out.println(nodeName2);
-            		WebElement button2 = elements3.findElement(By.id("btnDeleteNode"));
-            		button2.click();
-            		Thread.sleep(5000); 
-            	    new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
+    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
+    				btnDeleteNode.click();
+            	    new WebDriverWait(driver, 40).until(ExpectedConditions.alertIsPresent());
             	    driver.switchTo().alert().accept(); 
             		break;
             	}    	    	
             }break;
     	} 
     } 	  
-    
-	Thread.sleep(5000);
-	driver.findElement(By.className("logo")).click();  
+ 
+    	
 
-    //Delete nodePFC
-  	List <WebElement> listOfElements2 = driver.findElements(By.id("tableNode"));
-      System.out.println("Number of elements:" +listOfElements2.size());
-      for (int i=0; i < listOfElements2.size();i++){
-      	WebElement elements =  listOfElements2.get(i).findElement(By.id("tableNodeID"));
-      	WebElement elements2 =  listOfElements2.get(i).findElement(By.id("btnEditNode"));
-      	String nodeName = elements.getText().toString();   	
-      	if(nodeName.equals("nodePFC")) {
-      		System.out.println(nodeName);
-      		Thread.sleep(5000);
-      		WebElement button = elements2.findElement(By.id("btnEditNodeID"));
-      		Thread.sleep(5000);
-      		button.click();
-      		//5s explicit wait
-      		Thread.sleep(5000);    
-	        //Identify the node in the list on the left and click the delete button
-	        List <WebElement> listOfElements3 = driver.findElements(By.id("tableGroupNode"));
-	        System.out.println("Number of elements:" +listOfElements3.size());
-	        for (int j=0; j < listOfElements3.size();j++){
-	        	WebElement elements3 =  listOfElements3.get(j).findElement(By.id("tableGroupNodeID"));
-	          	String nodeName2 = elements3.getText().toString();  
-	          	if(nodeName2.contains("nodePFC")) {
-	          		System.out.println(nodeName2);
-	          		WebElement button2 = elements3.findElement(By.id("btnDeleteNode"));
-	          		button2.click();
-	          		Thread.sleep(5000); 
-	          	    new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
-	          	    driver.switchTo().alert().accept(); 
-	          		break;
+	tableNode = driver.findElements(By.id("tableNode"));
+    System.out.println("Number of elements:" +tableNode.size());
+    for (int i=0; i < tableNode.size();i++){
+    	WebElement tableNodeID =  tableNode.get(i).findElement(By.id("tableNodeID"));
+    	WebElement btnEditNode =  tableNode.get(i).findElement(By.id("btnEditNode"));
+    	String nodeName = tableNodeID.getText().toString();   	
+    	if(nodeName.equals("nodePFC")) {
+    		System.out.println(nodeName);    		
+    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(btnEditNode));
+    		btnEditNodeID.click();    		
+            List <WebElement> tableGroupNode = driver.findElements(By.id("tableGroupNode"));
+            System.out.println("Number of elements:" +tableGroupNode.size());
+            for (int j=0; j < tableGroupNode.size();j++){
+            	WebElement tableGroupNodeID =  tableGroupNode.get(j).findElement(By.id("tableGroupNodeID"));
+            	String nodeName2 = tableGroupNodeID.getText().toString();  
+            	if(nodeName2.contains("nodePFC")) {
+            		System.out.println(nodeName2);
+    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
+    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
+    				btnDeleteNode.click();
+            	    new WebDriverWait(driver, 40).until(ExpectedConditions.alertIsPresent());
+            	    driver.switchTo().alert().accept(); 
+            		break;
             	}    	    	
             }break;
     	} 
-    }
+    } 
+    
+    
+    
+    
+//  	//List <WebElement> listOfElements2 = driver.findElements(By.id("tableNode"));
+//  	listOfElements = driver.findElements(By.id("tableNode"));  	
+//      System.out.println("Number of elements:" +listOfElements.size());
+//      for (int i=0; i < listOfElements.size();i++){
+//      	WebElement elements =  listOfElements.get(i).findElement(By.id("tableNodeID"));
+//      	WebElement elements2 =  listOfElements.get(i).findElement(By.id("btnEditNode"));
+//      	String nodeName = elements.getText().toString();   	
+//      	if(nodeName.equals("nodePFC")) {
+//      		System.out.println(nodeName);
+//      		Thread.sleep(5000);
+//      		WebElement button = elements2.findElement(By.id("btnEditNodeID"));
+//      		Thread.sleep(5000);
+//      		button.click();
+//      		//5s explicit wait
+//      		Thread.sleep(5000);    
+//	        //Identify the node in the list on the left and click the delete button
+//	        List <WebElement> listOfElements3 = driver.findElements(By.id("tableGroupNode"));
+//	        System.out.println("Number of elements:" +listOfElements3.size());
+//	        for (int j=0; j < listOfElements3.size();j++){
+//	        	WebElement elements3 =  listOfElements3.get(j).findElement(By.id("tableGroupNodeID"));
+//	          	String nodeName2 = elements3.getText().toString();  
+//	          	if(nodeName2.contains("nodePFC")) {
+//	          		System.out.println(nodeName2);
+//	          		WebElement button2 = elements3.findElement(By.id("btnDeleteNode"));
+//	          		button2.click();
+//	          		Thread.sleep(5000); 
+//	          	    new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
+//	          	    driver.switchTo().alert().accept(); 
+//	          		break;
+//            	}    	    	
+//            }break;
+//    	} 
+//    }
   
-	Thread.sleep(5000);
-	driver.findElement(By.className("logo")).click();  
+    driver.get(link);	 
 	
     //Delete nodeIMC
 	List <WebElement> listOfElements3 = driver.findElements(By.id("tableNode"));
@@ -155,8 +181,7 @@ public void setUp() throws Exception {
             }break;
     	} 
     }
-	Thread.sleep(5000);
-	driver.findElement(By.className("logo")).click();  
+    driver.get(link);	
 	
     //Delete nodeTruck
 	List <WebElement> listOfElements4 = driver.findElements(By.id("tableNode"));
@@ -190,12 +215,8 @@ public void setUp() throws Exception {
             	}    	    	
             }break;
     	} 
-    }
-    
-    //5s explicit wait
-    Thread.sleep(8000);
-    //Click Logout button
-    driver.findElement(By.id("btnLogout")).click(); 
+    }    
+    driver.get(link);	
   }
   
 

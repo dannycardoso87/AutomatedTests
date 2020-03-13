@@ -46,7 +46,7 @@ public class RegressionTestPCS extends SuiteTestPCS {
 //	public void TC002createNodePCS() throws Exception	{
 //		createNodePCS();			
 //	}
-//	
+	
 //	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
 //	public void TC003createExistingNode() throws Exception	{
 //		createExistingNode();			
@@ -57,26 +57,40 @@ public class RegressionTestPCS extends SuiteTestPCS {
 //		deleteNode();			
 //	}
 		
-//	@Test (priority=4, dependsOnMethods = { "TC003createExistingNode" })
-////	(priority=5, dependsOnMethods = { "TC004deleteNode" })
+//	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
 //	public void TC005editNode() throws Exception	{
 //		editNode();			
 //	}
-	@Test (priority=5, dependsOnMethods = { "TC001loginValidatePCS" })
-	public void TC006statusCheck() throws Exception	{
-		statusCheck();			
+	
+//	@Test (priority=5, dependsOnMethods = { "TC001loginValidatePCS" })
+//	public void TC006statusCheck() throws Exception	{
+//		statusCheck();			
+//		System.out.println("statusCheck");
+//	}
+	
+//	@Test (priority=2, dependsOnMethods = { "TC006statusCheck" })
+//	public void T007stopSchedulerAllNodes() throws Exception{
+//		stopSchedulerAllNodes();
+//		System.out.println("stopSchedulerAllNodes");
+//	}
+	
+
+//	@Test (priority=4, dependsOnMethods = { "TC005editNode" })
+//	public void TC008deleteAllNodes() throws Exception	{
+//		deleteNodeAllNodes();			
+//	}
+	
+	
+	@Test (priority=4, dependsOnMethods = { "TC001loginValidatePCS" })
+	public void TC009setGlobalUnitMeasure() throws Exception	{
+		setGlobalUnitMeasure();			
 	}
 	
-	@Test (priority=2, dependsOnMethods = { "TC006statusCheck" })
-	public void T007stopSchedulerAllNodes() throws Exception{
-		stopSchedulerAllNodes();
+	@Test (priority=4, dependsOnMethods = { "TC009setGlobalUnitMeasure" })
+	public void TC0010getSnapshot() throws Exception	{
+		getSnapshot();			
 	}
-	
-	@Test (priority=3, dependsOnMethods = { "T007stopSchedulerAllNodes" })
-	public void T008autoStartNodePCS() throws Exception{
-		autoStartNodePCS();
-	}
-	
+
 	
 	
 	@AfterClass(alwaysRun = true)
