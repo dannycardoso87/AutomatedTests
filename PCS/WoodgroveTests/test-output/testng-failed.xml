@@ -5,11 +5,20 @@
     <classes>
       <class name="src.com.example.tests.RegressionTestPCS">
         <methods>
+          <include name="TC009statusCheck"/>
           <include name="TC001loginValidatePCS"/>
-          <include name="TC009setGlobalUnitMeasure"/>
-          <include name="TC0010getSnapshot"/>
-          <include name="setUp"/>
+          <include name="TC012deleteAllNodes"/>
+          <include name="TC0011setCycleTime"/>
           <include name="tearDown"/>
+          <include name="TC002createNodePCS"/>
+          <include name="T007stopSchedulerAllNodes"/>
+          <include name="TC003createExistingNode"/>
+          <include name="TC010getSnapshot"/>
+          <include name="TC005editNode"/>
+          <include name="TC006statusCheck"/>
+          <include name="TC004deleteNode"/>
+          <include name="setUp"/>
+          <include name="TC008setGlobalUnitMeasure"/>
         </methods>
       </class> <!-- src.com.example.tests.RegressionTestPCS -->
     </classes>

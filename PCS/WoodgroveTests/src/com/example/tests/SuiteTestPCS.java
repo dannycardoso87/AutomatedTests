@@ -1,7 +1,6 @@
 package src.com.example.tests;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.expectThrows;
 import static org.testng.Assert.fail;
 
 import java.util.List;
@@ -41,74 +40,86 @@ public class SuiteTestPCS{
 	 }	
 	
 	public void createNodePCS() throws Exception {
-		WebDriverWait waitbtnCreateNode = new WebDriverWait(RegressionTestPCS.driver, 10);
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		WebDriverWait waitbtnCreateNode = new WebDriverWait(RegressionTestPCS.driver, 20);
 		WebElement btnCreateNode = waitbtnCreateNode.until(ExpectedConditions.elementToBeClickable(By.id("btnCreateNode")));
 		btnCreateNode.click();	
 		WebElement text = RegressionTestPCS.driver.findElement(By.id("nodeMsgModal"));
-	    Boolean m = new WebDriverWait(RegressionTestPCS.driver, 10).until(ExpectedConditions.textToBePresentInElement(text,"Node id cannot be empty."));
+	    Boolean m = new WebDriverWait(RegressionTestPCS.driver, 20).until(ExpectedConditions.textToBePresentInElement(text,"Node id cannot be empty."));
 	    if(m.equals(true)) {
 	    	System.out.println("Node id cannot be empty");
 	    }
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest1");
-	    WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 10);
+	    WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest2");
-	    wait = new WebDriverWait(RegressionTestPCS.driver, 10);
+	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();   
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest3");
-	    wait = new WebDriverWait(RegressionTestPCS.driver, 10);
+	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();     
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest4");
-	    wait = new WebDriverWait(RegressionTestPCS.driver, 10);
+	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();     
-	    wait = new WebDriverWait(RegressionTestPCS.driver, 10);
+	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
 	    element.click();
-		String link = RegressionTestPCS.driver.findElement(By.className("logo")).getAttribute("href");  
+		link = RegressionTestPCS.driver.findElement(By.className("logo")).getAttribute("href");  
 		RegressionTestPCS.driver.get(link);
 	}	
 	
 	public void createExistingNode() throws Exception {
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
 		RegressionTestPCS.driver.findElement(By.id("btnCreateNode")).click();	    
 	    WebElement text = RegressionTestPCS.driver.findElement(By.id("nodeMsgModal"));
-	    Boolean m = new WebDriverWait(RegressionTestPCS.driver, 10).until(ExpectedConditions.textToBePresentInElement(text,"Node id cannot be empty."));
+	    Boolean m = new WebDriverWait(RegressionTestPCS.driver, 20).until(ExpectedConditions.textToBePresentInElement(text,"Node id cannot be empty."));
 	    if(m.equals(true)) {
 	    	System.out.println("Node id cannot be empty.");
 	    }	    
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();	
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest1");
 	    WebElement text2 = RegressionTestPCS.driver.findElement(By.id("nodeMsgModal"));
-	    Boolean m2 = new WebDriverWait(RegressionTestPCS.driver, 10).until(ExpectedConditions.textToBePresentInElement(text2,"Node id already in use."));
+	    Boolean m2 = new WebDriverWait(RegressionTestPCS.driver, 20).until(ExpectedConditions.textToBePresentInElement(text2,"Node id already in use."));
 	    if(m2.equals(true)) {
 	    	System.out.println("Node id already in use.");
 	    }
-	    WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 10);
+	    WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
 	    element.click();
 	    
 	  }
 	
 	public void deleteNode() throws Exception {
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
 		RegressionTestPCS.driver.findElement(By.id("btnCreateNode")).click();
 		WebElement text = RegressionTestPCS.driver.findElement(By.id("nodeMsgModal"));
 		WebElement btnEditNodeID;
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 40);
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 50);
 		
 		Boolean m = new WebDriverWait(RegressionTestPCS.driver, 10).until(ExpectedConditions.textToBePresentInElement(text, "Node id cannot be empty."));
 		if (m.equals(true)) {
@@ -120,7 +131,7 @@ public class SuiteTestPCS{
 		
 		WebElement btnSubmitNewNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 		btnSubmitNewNode.click();
-		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 		RegressionTestPCS.driver.switchTo().alert().accept();
 		WebElement btnCancelNewNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
 		btnCancelNewNode.click();
@@ -149,7 +160,7 @@ public class SuiteTestPCS{
 				WebElement button = elements3.findElement(By.id("btnDeleteNode"));
 				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
 				btnDeleteNode.click();
-				new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+				new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
 				RegressionTestPCS.driver.switchTo().alert().accept();
 				break;
 			}
@@ -157,9 +168,12 @@ public class SuiteTestPCS{
 	}	
 	
 	public void editNode() throws Exception {
-		String link = RegressionTestPCS.driver.findElement(By.className("logo")).getAttribute("href");  
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 70);			
-
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 80);	
 		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +listOfElements.size());
 	    for (int i=0; i < listOfElements.size();i++){
@@ -169,46 +183,59 @@ public class SuiteTestPCS{
 	    	String nodeName = elements.getText().toString();       	
 	    	if(nodeName.equals("nodetest1"))  {
 	    		System.out.println(nodeName);	    	
-	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
+	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
-	    		Thread.sleep(1000);
-	    		WebElement imputNodeName = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
+	    		//Thread.sleep(8000);
+	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
 	    		imputNodeName.sendKeys("nodePFC");
-	    		WebElement imputTypeNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
+	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
 	    		imputTypeNode.sendKeys("PFC");	    	
 	    		imputTypeNode.click();	    
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    		RegressionTestPCS.driver.switchTo().alert().accept(); 
-	    		WebElement btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait4 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement btnSaveNode = wait4.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
-	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	    		
-	    		WebElement cameraSettings = wait.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
-	    		cameraSettings.click();	    		
-	    		WebElement imputCameraIP = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	 
+	    		WebDriverWait wait5 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement cameraSettings = wait5.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
+	    		cameraSettings.click();	    	
+	    		WebDriverWait wait6 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputCameraIP = wait6.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
 	    		imputCameraIP.clear();
-	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	    		
-	    		WebElement imputCameraModel = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
+	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	
+	    		WebDriverWait wait7 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputCameraModel = wait7.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
 	    		imputCameraModel.click();
 	    		imputCameraModel.sendKeys("Demo (Folder)");	    	
 	    		imputCameraModel.click();	   
 	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    	    WebElement btnImageTest = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
+	    		WebDriverWait wait8 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    	    WebElement btnImageTest = wait8.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
 	    		btnImageTest.click();
 	    		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("full-img")));
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		btnSaveNode = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();	    			    		
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    		RegressionTestPCS.driver.get(link);		
 				break;
 			}     	
 	    }  
+		WebDriverWait waitbtnHome2 = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome2 = waitbtnHome2.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link2 = btnHome2.getAttribute("href");
+		RegressionTestPCS.driver.get(link2);	
+	    
 		List <WebElement> listOfElements2 = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +listOfElements2.size());
 	    for (int i=0; i < listOfElements2.size();i++){
@@ -217,47 +244,61 @@ public class SuiteTestPCS{
 	    	WebElement elements2 =  listOfElements2.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();  
 	    	if(nodeName.equals("nodetest2"))  {
-	    		System.out.println(nodeName);	    		
-	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
+	    		System.out.println(nodeName);	    	
+	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();	    			   
-	    		Thread.sleep(1000);
-	    		WebElement imputNodeName = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
+	    		//Thread.sleep(1000);
+	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
 	    		imputNodeName.sendKeys("nodePRC");
-	    		WebElement imputTypeNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
+	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
 	    		imputTypeNode.sendKeys("PRC");	    	
 	    		imputTypeNode.click();	    
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    		RegressionTestPCS.driver.switchTo().alert().accept(); 
-	    		WebElement btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait4 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement btnSaveNode = wait4.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
-	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	    		
-	    		WebElement cameraSettings = wait.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
-	    		cameraSettings.click();	    		
-	    		WebElement imputCameraIP = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	
+	    		WebDriverWait wait5 = new WebDriverWait(RegressionTestPCS.driver, 80);    		
+	    		WebElement cameraSettings = wait5.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
+	    		cameraSettings.click();	    
+	    		WebDriverWait wait6 = new WebDriverWait(RegressionTestPCS.driver, 80);		
+	    		WebElement imputCameraIP = wait6.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
 	    		imputCameraIP.clear();
-	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	    		
-	    		WebElement imputCameraModel = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
+	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	 
+	    		WebDriverWait wait7 = new WebDriverWait(RegressionTestPCS.driver, 80);   		
+	    		WebElement imputCameraModel = wait7.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
 	    		imputCameraModel.click();
 	    		imputCameraModel.sendKeys("Demo (Folder)");	    	
 	    		imputCameraModel.click();	   
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait8 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		btnSaveNode = wait8.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    	    WebElement btnImageTest = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
+	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    	    WebElement btnImageTest = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
 	    		btnImageTest.click();
 	    		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("full-img")));
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait10 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		btnSaveNode = wait10.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();	    			    		
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
-	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    		RegressionTestPCS.driver.get(link);		
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    	    RegressionTestPCS.driver.switchTo().alert().accept();	
 				break;
 			} 
-	    }	      
+	    }	     
+		WebDriverWait waitbtnHome3 = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome3 = waitbtnHome3.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link3 = btnHome3.getAttribute("href");
+		RegressionTestPCS.driver.get(link3);
+	    
 		List <WebElement> listOfElements3 = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +listOfElements3.size());
 	    for (int i=0; i < listOfElements3.size();i++){
@@ -266,48 +307,74 @@ public class SuiteTestPCS{
 	    	WebElement elements2 =  listOfElements3.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();  
 	    	if(nodeName.equals("nodetest3"))  {
-	    		System.out.println(nodeName);	    		
-	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
+	    		System.out.println(nodeName);	
+	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);    		
+	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
-	    		Thread.sleep(1000);
-	    		WebElement imputNodeName = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
+	    		//Thread.sleep(1000);
+	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	    		
+	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
 	    		imputNodeName.sendKeys("nodeTruck");
-	    		WebElement imputTypeNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
+	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
 	    		imputTypeNode.sendKeys("Truck Dump Volume");	
 	    		imputTypeNode.click();	    
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    		RegressionTestPCS.driver.switchTo().alert().accept(); 
-	    		WebElement btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait4 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		WebElement btnSaveNode = wait4.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
-	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	    		
-	    		WebElement cameraSettings = wait.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
-	    		cameraSettings.click();	    		
-	    		WebElement imputCameraIP = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	  
+	    		WebDriverWait wait5 = new WebDriverWait(RegressionTestPCS.driver, 80);  		
+	    		WebElement cameraSettings = wait5.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
+	    		cameraSettings.click();	    	
+	    		WebDriverWait wait6 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputCameraIP = wait6.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
 	    		imputCameraIP.clear();
-	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	    		
-	    		WebElement imputCameraModel = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
+	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	  
+	    		WebDriverWait wait7 = new WebDriverWait(RegressionTestPCS.driver, 80);  		
+	    		WebElement imputCameraModel = wait7.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
 	    		imputCameraModel.click();
 	    		imputCameraModel.sendKeys("Demo (Folder)");	    	
-	    		imputCameraModel.click();	   
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		imputCameraModel.click();	  
+	    		WebDriverWait wait8 = new WebDriverWait(RegressionTestPCS.driver, 80); 
+	    		btnSaveNode = wait8.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    	    Thread.sleep(1000);
-	    	    WebElement btnImageTest = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
+	    	    //Thread.sleep(1000);
+	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    	    WebElement btnImageTest = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
 	    		btnImageTest.click();
-	    		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("full-img")));
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait10 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		wait10.until(ExpectedConditions.presenceOfElementLocated(By.className("full-img")));
+	    		WebDriverWait wait11 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		btnSaveNode = wait11.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();	    			    		
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
-	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    		RegressionTestPCS.driver.get(link);		
+	    	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
+	    	    RegressionTestPCS.driver.switchTo().alert().accept();	
 				break;
 			} 
 	    }	     
+		WebDriverWait waitbtnHome4 = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome4 = waitbtnHome4.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link4 = btnHome4.getAttribute("href");
+		RegressionTestPCS.driver.get(link4);
+		
+		
+		WebDriverWait waitbtnHomet = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHomet = waitbtnHomet.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String linkt = btnHomet.getAttribute("href");
+		RegressionTestPCS.driver.get(linkt);
+		
+		
+		
+		
+		
+	    
 		List <WebElement> listOfElements4 = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +listOfElements4.size());
 	    for (int i=0; i < listOfElements4.size();i++){
@@ -316,53 +383,65 @@ public class SuiteTestPCS{
 	    	WebElement elements2 =  listOfElements4.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();  
 	    	if(nodeName.equals("nodetest4"))  {
-	    		System.out.println(nodeName);	    		
-	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
+	    		System.out.println(nodeName);	
+	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
-	    		Thread.sleep(1000);
-	    		WebElement imputNodeName = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
+	    		//Thread.sleep(3000);
+	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
 	    		imputNodeName.sendKeys("nodeIMC");
-	    		WebElement imputTypeNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
+	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
 	    		imputTypeNode.sendKeys("Image Collector");	    	
 	    		imputTypeNode.click();	    
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    		RegressionTestPCS.driver.switchTo().alert().accept(); 
-	    		WebElement btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait4 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement btnSaveNode = wait4.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
-	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	    		
-	    		WebElement cameraSettings = wait.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
-	    		cameraSettings.click();	    		
-	    		WebElement imputCameraIP = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
+	    		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    		RegressionTestPCS.driver.switchTo().alert().accept(); 	  
+	    		WebDriverWait wait5 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement cameraSettings = wait5.until(ExpectedConditions.elementToBeClickable(By.id("cameraSettings")));
+	    		cameraSettings.click();	    	
+	    		WebDriverWait wait6 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebElement imputCameraIP = wait6.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraIP")));
 	    		imputCameraIP.clear();
-	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);	    		
-	    		WebElement imputCameraModel = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
+	    		imputCameraIP.sendKeys(RegressionTestPCS.urlCamera);
+	    		WebDriverWait wait7 = new WebDriverWait(RegressionTestPCS.driver, 80);	    		
+	    		WebElement imputCameraModel = wait7.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
 	    		imputCameraModel.click();
 	    		imputCameraModel.sendKeys("Demo (Folder)");	    	
 	    		imputCameraModel.click();	   
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait8 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		btnSaveNode = wait8.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    	    Thread.sleep(1000);
-	    	    WebElement btnImageTest = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
+	    	    //Thread.sleep(1000);
+	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    	    WebElement btnImageTest = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
 	    		btnImageTest.click();	
 	    		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("full-img")));
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait10 = new WebDriverWait(RegressionTestPCS.driver, 80);
+	    		btnSaveNode = wait10.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();	    			    		
-	    	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
 	    		RegressionTestPCS.driver.get(link);		
 				break;
 			} 	
 	    }   	
 	}	
+	
 	public void statusCheck() throws Exception {
-		String link = RegressionTestPCS.driver.findElement(By.className("logo")).getAttribute("href"); 
-		RegressionTestPCS.driver.get(link);	
-		
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);			
 		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 		System.out.println("Number of elements:" +listOfElements.size());	
 	    for (int i=0; i < listOfElements.size();i++){
@@ -372,7 +451,7 @@ public class SuiteTestPCS{
 	    	String cycleTime1 = elements2.getText().toString(); 
 	    	System.out.println(cycleTime1);
 	    	String cycleTime2 = null;	    	
-	    	for (int j=0; j < 100;j++) {
+	    	for (int j=0; j < 6000;j++) {
 	    		elements2 = listOfElements.get(i).findElement(By.id("cycleTime"));
 	    		cycleTime2 = elements2.getText().toString(); 
 	    		if (!cycleTime1.equals(cycleTime2)) { 
@@ -416,21 +495,25 @@ public class SuiteTestPCS{
 	    	}		    	
 	    }					    
 	}
+	
 	public void stopSchedulerAllNodes() throws Exception {
-		String link = RegressionTestPCS.driver.findElement(By.className("logo")).getAttribute("href"); 
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
 		RegressionTestPCS.driver.get(link);	
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 10);	
+			
 		WebElement btnStopScheduler;
 		WebElement btnStartScheduler;
-		
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 50);
 		btnStopScheduler = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnStopScheduler")));
 		btnStopScheduler.click();	
 
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();	    
-	    wait.until(ExpectedConditions.presenceOfElementLocated(By.id("statusDisabled")));
+	    WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 50);
+	    wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("statusDisabled")));
 	    assertEquals(RegressionTestPCS.driver.findElement(By.id("statusDisabled")).getText(), "Scheduler - Disabled");
 					
 		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableNode"));
@@ -442,7 +525,7 @@ public class SuiteTestPCS{
 	    	String cycleTime1 = elements2.getText().toString(); 
 	    	System.out.println(cycleTime1);
 	    	String cycleTime2 = "0";	    	
-	    	for (int j=0; j < 100;j++) {
+	    	for (int j=0; j < 6000;j++) {
 	    		elements2 = listOfElements.get(i).findElement(By.id("cycleTime"));
 	    		cycleTime2 = elements2.getText().toString(); 
 	    		if (cycleTime1.equals(cycleTime2)) { 
@@ -485,10 +568,10 @@ public class SuiteTestPCS{
 				}
 	    	}		    	
 	    }
-
-	    btnStartScheduler = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnStartScheduler")));
+	    WebDriverWait wait4 = new WebDriverWait(RegressionTestPCS.driver, 50);
+	    btnStartScheduler = wait4.until(ExpectedConditions.elementToBeClickable(By.id("btnStartScheduler")));
 	    btnStartScheduler.click();	
-	    new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();
 		assertEquals(RegressionTestPCS.driver.findElement(By.id("statusEnabled")).getText(), "Scheduler - Enabled");	
 	   	List <WebElement> listOfElements2 = RegressionTestPCS.driver.findElements(By.id("tableNode"));
@@ -500,7 +583,7 @@ public class SuiteTestPCS{
 	    	String cycleTime1 = elements2.getText().toString(); 
 	    	System.out.println(cycleTime1);
 	    	String cycleTime2 = null;	    	
-	    	for (int j=0; j < 100;j++) {
+	    	for (int j=0; j < 6000;j++) {
 	    		elements2 = listOfElements2.get(i).findElement(By.id("cycleTime"));
 	    		cycleTime2 = elements2.getText().toString(); 
 	    		if (!cycleTime1.equals(cycleTime2)) { 
@@ -546,9 +629,11 @@ public class SuiteTestPCS{
 	}
 	
 	public void deleteNodeAllNodes() throws Exception {
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 30);	
-		String link = RegressionTestPCS.driver.findElement(By.id("btnHome")).getAttribute("href");  
-		
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 50);	
 		List <WebElement> tableNode = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +tableNode.size());
 	    for (int i=0; i < tableNode.size();i++){
@@ -569,7 +654,7 @@ public class SuiteTestPCS{
 	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
 	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
 	    				btnDeleteNode.click();
-	            	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	            	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
 	            	    RegressionTestPCS.driver.switchTo().alert().accept(); 
 	            		break;
 	            	}    	    	
@@ -598,7 +683,7 @@ public class SuiteTestPCS{
 	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
 	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
 	    				btnDeleteNode.click();
-	            	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	            	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
 	            	    RegressionTestPCS.driver.switchTo().alert().accept(); 
 	            		break;
 	            	}    	    	
@@ -627,7 +712,7 @@ public class SuiteTestPCS{
 	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
 	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
 	    				btnDeleteNode.click();
-	            	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	            	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
 	            	    RegressionTestPCS.driver.switchTo().alert().accept(); 
 	            		break;
 	            	}    	    	
@@ -638,7 +723,11 @@ public class SuiteTestPCS{
 	}		
 	
 	public void setGlobalUnitMeasure() throws Exception {
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 10);	
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 20);	
 		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSettings")));
 		button.click();
 		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnGlobalVariables")));
@@ -648,26 +737,31 @@ public class SuiteTestPCS{
 		button.sendKeys("cm");	    	
 		button.click();	
 		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveAll")));
-		button.click();		
+		button.click();			
 		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
-	    RegressionTestPCS.driver.switchTo().alert().accept(); 
-		
+	    RegressionTestPCS.driver.switchTo().alert().accept();	
+	    
+	    System.out.println("setGlobalUnitMeasure");
 	}
 	
 	public void getSnapshot() throws Exception {
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 10);	
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 40);	
 		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSettings")));
 		button.click();
 		
-		//select some nodes
+		//get Snapshot from 2 nodes
 		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSnapShot")));
 		button.click();	
-		button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputRawImages")));
-		button.clear();
-		button.sendKeys("2");
-		button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputProcessedImages")));
-		button.clear();
-		button.sendKeys("3");
+		WebElement imput = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputRawImages")));
+		imput.clear();
+		imput.sendKeys("1");
+		imput = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputProcessedImages")));
+		imput.clear();
+		imput.sendKeys("1");
 		
 		List <WebElement> checkboxNode = RegressionTestPCS.driver.findElements(By.id("checkboxNode"));
 	    System.out.println("Number of elements:" +checkboxNode.size());
@@ -675,7 +769,7 @@ public class SuiteTestPCS{
 	    	WebElement checkboxNodeId =  checkboxNode.get(i).findElement(By.id("checkboxNodeId"));
 	    	String nodeName = checkboxNodeId.getText().toString();   	
 	    	if(nodeName.equals("nodePRC")) {	
-	    		checkboxNodeId.click();	    		
+	    		checkboxNodeId.click();	    		 
 	    	}
 	    	if(nodeName.equals("nodeTruck")) {	
 	    		checkboxNodeId.click();	    		
@@ -683,24 +777,31 @@ public class SuiteTestPCS{
 	    }
 	    button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnTakeSnapshot")));
 	    button.click();
-	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotMessage")));
-		
-		
-		/*select alguns nodes
-		 * take snapshot
-		 * ver se esta carregando
-		 * ver se o arquivo foi gerado
-		 * close		
-		 */
-		
-		/*select all
-		 *  take snapshot
-		 * ver alerta
-		 * ver se esta carregando
-		 * ver se o arquivo foi gerado
-		 * close
-		*/	
-		
+	    WebElement pending = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotPending")));
+	    Thread.sleep(15000);
+	    pending = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotMessage")));	          
+	    String message = pending.getText();
+	    if (!message.contains("complete")){
+			fail();
+		}
+		     
+	    //get Snapshot from all nodes
+	    imput = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputRawImages")));
+	    imput.clear();
+	    imput.sendKeys("1");
+	    imput = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputProcessedImages")));
+	    imput.clear();
+	    imput.sendKeys("2");
+	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnSelectAll")));
+	    button.click();
+	    button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnTakeSnapshot")));
+	    button.click();	      
+	    Thread.sleep(15000);
+	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotMessage")));	          
+	    message = button.getText();
+	    if (!message.contains("complete")){
+			fail();
+		}
 		
 		/*
 		 * select none
@@ -710,5 +811,57 @@ public class SuiteTestPCS{
 		 * ver se o arquivo foi gerado (nao deve)
 		 * close
 		*/
+	    
+	    //get Snapshot from none nodes
+	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnSelectNone")));
+	    button.click();
+	    button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnTakeSnapshot")));
+	    button.click();
+	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    RegressionTestPCS.driver.switchTo().alert().accept(); 	    
+	    /* Ticket APC-659 */
+//	    Thread.sleep(5000);
+//	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotMessage")));	          
+//	    message = button.getText();
+//	    if (message.contains("complete")){
+//			fail();
+//		}		  
+	    
+	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnCloseSnapshot")));
+	    button.click();
+	    
 	}
+	
+	public void setCycleTime() throws Exception {			
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 30);
+		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableNode"));
+	    System.out.println("Number of elements:" +listOfElements.size());
+	    for (int i=0; i < listOfElements.size();i++){
+	    	System.out.println(i);
+	    	WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
+	    	WebElement elements2 = listOfElements.get(i).findElement(By.id("btnEditNode"));
+	    	String nodeName = elements.getText().toString();       	
+	    	if(nodeName.equals("nodePFC"))  {
+	    		System.out.println(nodeName);	    	
+	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
+	    		btnEditNodeID.click();
+	    		Thread.sleep(1000);
+	    		WebElement imputCycleTime = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("imputCycleTime")));
+	    		imputCycleTime.clear();
+	    		imputCycleTime.sendKeys("10000");
+	    		WebElement btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		btnSaveNode.click();
+	    		new WebDriverWait(RegressionTestPCS.driver, 30).until(ExpectedConditions.alertIsPresent());
+	    		RegressionTestPCS.driver.switchTo().alert().accept();
+	    		RegressionTestPCS.driver.get(link);		
+				break;
+			}     	
+	    }  
+		
+    }
+	
 }

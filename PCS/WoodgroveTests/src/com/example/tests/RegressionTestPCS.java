@@ -24,6 +24,8 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	public static WebDriver driver;
 	public static String baseUrl;
 	public static String urlCamera;
+	public static String usernameCamera;
+	public static String passwordCamera;
 	public static StringBuffer verificationErrors = new StringBuffer(); 
 	public final String pathChromeDriver = "C:\\Projects\\AutomatedTests\\Package\\chromedriver.exe";  	
 
@@ -35,6 +37,8 @@ public class RegressionTestPCS extends SuiteTestPCS {
 		baseUrl = "https://localhost:3002/"; 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		urlCamera = "C:\\Users\\Danielly Cardoso\\OneDrive - Woodgrove Technologies Inc\\Desktop\\nodefiles\\PFC1\\raw_images"; 
+		usernameCamera = "axis";
+		passwordCamera = "root";
 	}
 	
 	@Test (priority=1)	
@@ -42,56 +46,60 @@ public class RegressionTestPCS extends SuiteTestPCS {
 		loginValidatePCS();			
 	}
 	
-//	@Test (priority=2, dependsOnMethods = { "TC001loginValidatePCS" })
-//	public void TC002createNodePCS() throws Exception	{
-//		createNodePCS();			
-//	}
-	
-//	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
-//	public void TC003createExistingNode() throws Exception	{
-//		createExistingNode();			
-//	}
-	
-//	@Test (priority=4, dependsOnMethods = { "TC003createExistingNode" })
-//	public void TC004deleteNode() throws Exception	{
-//		deleteNode();			
-//	}
-		
-//	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
-//	public void TC005editNode() throws Exception	{
-//		editNode();			
-//	}
-	
-//	@Test (priority=5, dependsOnMethods = { "TC001loginValidatePCS" })
-//	public void TC006statusCheck() throws Exception	{
-//		statusCheck();			
-//		System.out.println("statusCheck");
-//	}
-	
-//	@Test (priority=2, dependsOnMethods = { "TC006statusCheck" })
-//	public void T007stopSchedulerAllNodes() throws Exception{
-//		stopSchedulerAllNodes();
-//		System.out.println("stopSchedulerAllNodes");
-//	}
-	
-
-//	@Test (priority=4, dependsOnMethods = { "TC005editNode" })
-//	public void TC008deleteAllNodes() throws Exception	{
-//		deleteNodeAllNodes();			
-//	}
-	
-	
-	@Test (priority=4, dependsOnMethods = { "TC001loginValidatePCS" })
-	public void TC009setGlobalUnitMeasure() throws Exception	{
-		setGlobalUnitMeasure();			
+	@Test (priority=2, dependsOnMethods = { "TC001loginValidatePCS" })
+	public void TC002createNodePCS() throws Exception	{
+		createNodePCS();			
 	}
 	
-	@Test (priority=4, dependsOnMethods = { "TC009setGlobalUnitMeasure" })
-	public void TC0010getSnapshot() throws Exception	{
+	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
+	public void TC003createExistingNode() throws Exception	{
+		createExistingNode();			
+	}
+	
+	@Test (priority=4, dependsOnMethods = { "TC003createExistingNode" })
+	public void TC004deleteNode() throws Exception	{
+		deleteNode();			
+	}
+		
+	@Test (priority=5, dependsOnMethods = { "TC004deleteNode" })
+	public void TC005editNode() throws Exception	{
+		editNode();			
+	}
+	
+	@Test (priority=6, dependsOnMethods = { "TC005editNode" })
+	public void TC006statusCheck() throws Exception	{
+		statusCheck();			
+	}
+	
+	@Test (priority=7, dependsOnMethods = { "TC006statusCheck" })
+	public void T007stopSchedulerAllNodes() throws Exception{
+		stopSchedulerAllNodes();
+	}	
+	
+	@Test (priority=8, dependsOnMethods = { "T007stopSchedulerAllNodes" })
+	public void TC008setGlobalUnitMeasure() throws Exception {
+		setGlobalUnitMeasure();	
+	}
+	
+	@Test (priority=9, dependsOnMethods = { "TC008setGlobalUnitMeasure" })
+	public void TC009statusCheck() throws Exception	{
+		statusCheck();			
+	}
+	
+	@Test (priority=10, dependsOnMethods = { "TC009statusCheck" })
+	public void TC010getSnapshot() throws Exception {
 		getSnapshot();			
 	}
 
+	@Test (priority=11, dependsOnMethods = { "TC010getSnapshot" })
+	public void TC0011setCycleTime() throws Exception {
+//		setCycleTime();	
+	}	
 	
+	@Test (priority=12, dependsOnMethods = { "TC0011setCycleTime" })
+	public void TC012deleteAllNodes() throws Exception{
+		deleteNodeAllNodes();			
+	}
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown() throws Exception {
