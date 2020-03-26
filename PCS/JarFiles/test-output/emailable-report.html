@@ -9,14 +9,45 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Command line suite</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">156,541</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">105,705</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">src.com.example.tests.RegressionTestPCS</td><td><a href="#m0">TC001loginValidatePCS</a></td><td rowspan="1">1583936763824</td><td rowspan="1">1721</td></tr><tr class="passedeven"><td><a href="#m1">TC002createNodePCS</a></td><td rowspan="1">1583936765547</td><td rowspan="1">3522</td></tr><tr class="passedeven"><td><a href="#m2">TC003createExistingNode</a></td><td rowspan="1">1583936769069</td><td rowspan="1">989</td></tr><tr class="passedeven"><td><a href="#m3">TC004deleteNode</a></td><td rowspan="1">1583936770059</td><td rowspan="1">20082</td></tr><tr class="passedeven"><td><a href="#m4">TC005editNode</a></td><td rowspan="1">1583936790141</td><td rowspan="1">120175</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">src.com.example.tests.RegressionTestPCS</td><td><a href="#m0">TC012deleteAllNodes</a></td><td rowspan="1">1585149979720</td><td rowspan="1">6071</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="11">src.com.example.tests.RegressionTestPCS</td><td><a href="#m1">TC0011setCycleTime</a></td><td rowspan="1">1585149979720</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m2">TC001loginValidatePCS</a></td><td rowspan="1">1585149890340</td><td rowspan="1">1152</td></tr><tr class="passedeven"><td><a href="#m3">TC002createNodePCS</a></td><td rowspan="1">1585149891494</td><td rowspan="1">3544</td></tr><tr class="passedeven"><td><a href="#m4">TC003createExistingNode</a></td><td rowspan="1">1585149895039</td><td rowspan="1">971</td></tr><tr class="passedeven"><td><a href="#m5">TC004deleteNode</a></td><td rowspan="1">1585149896010</td><td rowspan="1">3218</td></tr><tr class="passedeven"><td><a href="#m6">TC005editNode</a></td><td rowspan="1">1585149899229</td><td rowspan="1">18028</td></tr><tr class="passedeven"><td><a href="#m7">TC006statusCheck</a></td><td rowspan="1">1585149917257</td><td rowspan="1">42016</td></tr><tr class="passedeven"><td><a href="#m8">TC007stopSchedulerAllNodes</a></td><td rowspan="1">1585149959274</td><td rowspan="1">19510</td></tr><tr class="passedeven"><td><a href="#m9">TC008setGlobalUnitMeasure</a></td><td rowspan="1">1585149978785</td><td rowspan="1">933</td></tr><tr class="passedeven"><td><a href="#m10">TC009statusCheck</a></td><td rowspan="1">1585149979719</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m11">TC010getSnapshot</a></td><td rowspan="1">1585149979719</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">src.com.example.tests.RegressionTestPCS#TC001loginValidatePCS</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">src.com.example.tests.RegressionTestPCS#TC002createNodePCS</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">src.com.example.tests.RegressionTestPCS#TC003createExistingNode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">src.com.example.tests.RegressionTestPCS#TC004deleteNode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">src.com.example.tests.RegressionTestPCS#TC005editNode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Command line test</h2><h3 id="m0">src.com.example.tests.RegressionTestPCS#TC012deleteAllNodes</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.149)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;DESKTOP-QSPLCG3&apos;, ip: &apos;192.168.0.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\DANIEL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50474}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: edeadb3abefc7d764abda158d7cf271a
+*** Element info: {Using=id, value=tableNodeID}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:185)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementById(RemoteWebElement.java:221)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:181)
+	at src.com.example.tests.SuiteTestPCS.deleteNodeAllNodes(SuiteTestPCS.java:637)
+	at src.com.example.tests.RegressionTestPCS.TC012deleteAllNodes(RegressionTestPCS.java:101)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at src.com.example.tests.RegressionTestPCS.main(RegressionTestPCS.java:21)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">src.com.example.tests.RegressionTestPCS#TC0011setCycleTime</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">src.com.example.tests.RegressionTestPCS#TC001loginValidatePCS</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">src.com.example.tests.RegressionTestPCS#TC002createNodePCS</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">src.com.example.tests.RegressionTestPCS#TC003createExistingNode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">src.com.example.tests.RegressionTestPCS#TC004deleteNode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">src.com.example.tests.RegressionTestPCS#TC005editNode</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">src.com.example.tests.RegressionTestPCS#TC006statusCheck</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">src.com.example.tests.RegressionTestPCS#TC007stopSchedulerAllNodes</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">src.com.example.tests.RegressionTestPCS#TC008setGlobalUnitMeasure</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">src.com.example.tests.RegressionTestPCS#TC009statusCheck</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">src.com.example.tests.RegressionTestPCS#TC010getSnapshot</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

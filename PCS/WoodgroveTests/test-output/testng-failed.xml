@@ -7,11 +7,11 @@
         <methods>
           <include name="TC009statusCheck"/>
           <include name="TC001loginValidatePCS"/>
+          <include name="TC007stopSchedulerAllNodes"/>
           <include name="TC012deleteAllNodes"/>
           <include name="TC0011setCycleTime"/>
           <include name="tearDown"/>
           <include name="TC002createNodePCS"/>
-          <include name="T007stopSchedulerAllNodes"/>
           <include name="TC003createExistingNode"/>
           <include name="TC010getSnapshot"/>
           <include name="TC005editNode"/>

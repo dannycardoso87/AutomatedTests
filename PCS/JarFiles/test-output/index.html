@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Command_line_suite">
-              <span class="suite-name border-passed">Command line suite</span>
+              <span class="suite-name border-failed">Command line suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">12 methods, 1 failed,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods failed suite-Command_line_suite"> (hide)</a> <!-- hide-methods failed suite-Command_line_suite -->
+                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods failed suite-Command_line_suite"> (show)</a> <!-- show-methods failed suite-Command_line_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Command_line_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC012deleteAllNodes">TC012deleteAllNodes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Command_line_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +114,11 @@
                       <a href="#" panel-name="suite-Command_line_suite" class="show-methods passed suite-Command_line_suite"> (show)</a> <!-- show-methods passed suite-Command_line_suite -->
                     </span>
                     <div class="method-list-content passed suite-Command_line_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC0011setCycleTime">TC0011setCycleTime</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC001loginValidatePCS">TC001loginValidatePCS</a> <!-- method navigator-link -->
@@ -125,6 +144,31 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC005editNode">TC005editNode</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC006statusCheck">TC006statusCheck</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC007stopSchedulerAllNodes">TC007stopSchedulerAllNodes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC008setGlobalUnitMeasure">TC008setGlobalUnitMeasure</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC009statusCheck">TC009statusCheck</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="src.com.example.tests.RegressionTestPCS" hash-for-method="TC010getSnapshot">TC010getSnapshot</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Command_line_suite -->
                   </li>
                 </ul>
@@ -137,12 +181,60 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">src.com.example.tests.RegressionTestPCS</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC012deleteAllNodes">
+                  </a> <!-- TC012deleteAllNodes -->
+                  <span class="method-name">TC012deleteAllNodes</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.149)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;DESKTOP-QSPLCG3&apos;, ip: &apos;192.168.0.18&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\DANIEL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50474}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: edeadb3abefc7d764abda158d7cf271a
+*** Element info: {Using=id, value=tableNodeID}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:185)
+	at org.openqa.selenium.remote.RemoteWebElement.findElementById(RemoteWebElement.java:221)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebElement.findElement(RemoteWebElement.java:181)
+	at src.com.example.tests.SuiteTestPCS.deleteNodeAllNodes(SuiteTestPCS.java:637)
+	at src.com.example.tests.RegressionTestPCS.TC012deleteAllNodes(RegressionTestPCS.java:101)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at src.com.example.tests.RegressionTestPCS.main(RegressionTestPCS.java:21)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
           <div class="suite-Command_line_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">src.com.example.tests.RegressionTestPCS</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC0011setCycleTime">
+                  </a> <!-- TC0011setCycleTime -->
+                  <span class="method-name">TC0011setCycleTime</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="TC001loginValidatePCS">
@@ -176,6 +268,41 @@
                   <a name="TC005editNode">
                   </a> <!-- TC005editNode -->
                   <span class="method-name">TC005editNode</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC006statusCheck">
+                  </a> <!-- TC006statusCheck -->
+                  <span class="method-name">TC006statusCheck</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC007stopSchedulerAllNodes">
+                  </a> <!-- TC007stopSchedulerAllNodes -->
+                  <span class="method-name">TC007stopSchedulerAllNodes</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC008setGlobalUnitMeasure">
+                  </a> <!-- TC008setGlobalUnitMeasure -->
+                  <span class="method-name">TC008setGlobalUnitMeasure</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC009statusCheck">
+                  </a> <!-- TC009statusCheck -->
+                  <span class="method-name">TC009statusCheck</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC010getSnapshot">
+                  </a> <!-- TC010getSnapshot -->
+                  <span class="method-name">TC010getSnapshot</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -231,32 +358,60 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC005editNode')
+data.setCell(0, 1, 'TC006statusCheck')
 data.setCell(0, 2, 'src.com.example.tests.RegressionTestPCS')
-data.setCell(0, 3, 120175);
+data.setCell(0, 3, 42016);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'TC004deleteNode')
+data.setCell(1, 1, 'TC007stopSchedulerAllNodes')
 data.setCell(1, 2, 'src.com.example.tests.RegressionTestPCS')
-data.setCell(1, 3, 20082);
+data.setCell(1, 3, 19510);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'TC002createNodePCS')
+data.setCell(2, 1, 'TC005editNode')
 data.setCell(2, 2, 'src.com.example.tests.RegressionTestPCS')
-data.setCell(2, 3, 3522);
+data.setCell(2, 3, 18028);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'TC001loginValidatePCS')
+data.setCell(3, 1, 'TC012deleteAllNodes')
 data.setCell(3, 2, 'src.com.example.tests.RegressionTestPCS')
-data.setCell(3, 3, 1721);
+data.setCell(3, 3, 6071);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'TC003createExistingNode')
+data.setCell(4, 1, 'TC002createNodePCS')
 data.setCell(4, 2, 'src.com.example.tests.RegressionTestPCS')
-data.setCell(4, 3, 989);
+data.setCell(4, 3, 3544);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'TC004deleteNode')
+data.setCell(5, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(5, 3, 3218);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'TC001loginValidatePCS')
+data.setCell(6, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(6, 3, 1152);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'TC003createExistingNode')
+data.setCell(7, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(7, 3, 971);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'TC008setGlobalUnitMeasure')
+data.setCell(8, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(8, 3, 933);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'TC009statusCheck')
+data.setCell(9, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(9, 3, 0);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'TC010getSnapshot')
+data.setCell(10, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(10, 3, 0);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'TC0011setCycleTime')
+data.setCell(11, 2, 'src.com.example.tests.RegressionTestPCS')
+data.setCell(11, 3, 0);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -289,27 +444,57 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">TC001loginValidatePCS</span>
-                <span class="method-start">9464 ms</span>
+                <span class="method-start">9648 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC002createNodePCS</span>
-                <span class="method-start">11187 ms</span>
+                <span class="method-start">10802 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC003createExistingNode</span>
-                <span class="method-start">14709 ms</span>
+                <span class="method-start">14347 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC004deleteNode</span>
-                <span class="method-start">15699 ms</span>
+                <span class="method-start">15318 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">TC005editNode</span>
-                <span class="method-start">35781 ms</span>
+                <span class="method-start">18537 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC006statusCheck</span>
+                <span class="method-start">36565 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC007stopSchedulerAllNodes</span>
+                <span class="method-start">78582 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC008setGlobalUnitMeasure</span>
+                <span class="method-start">98093 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC009statusCheck</span>
+                <span class="method-start">99027 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC010getSnapshot</span>
+                <span class="method-start">99027 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC0011setCycleTime</span>
+                <span class="method-start">99028 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC012deleteAllNodes</span>
+                <span class="method-start">99028 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">155956 ms</span>
+                <span class="method-start">105100 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

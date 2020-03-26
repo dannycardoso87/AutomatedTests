@@ -53,28 +53,28 @@ public class SuiteTestPCS{
 	    	System.out.println("Node id cannot be empty");
 	    }
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
-	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest1");
+	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys(RegressionTestPCS.nodeName1);
 	    WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
 	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
-	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest2");
+	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys(RegressionTestPCS.nodeName2);
 	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
 	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();   
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
-	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest3");
+	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys(RegressionTestPCS.nodeName3);
 	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
 	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();     
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
-	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest4");
+	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys(RegressionTestPCS.nodeName4);
 	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 	    element.click();
@@ -82,8 +82,7 @@ public class SuiteTestPCS{
 	    RegressionTestPCS.driver.switchTo().alert().accept();     
 	    wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
-	    element.click();
-		link = RegressionTestPCS.driver.findElement(By.className("logo")).getAttribute("href");  
+	    element.click();		
 		RegressionTestPCS.driver.get(link);
 	}	
 	
@@ -99,7 +98,7 @@ public class SuiteTestPCS{
 	    	System.out.println("Node id cannot be empty.");
 	    }	    
 	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();	
-	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest1");
+	    RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys(RegressionTestPCS.nodeName1);
 	    WebElement text2 = RegressionTestPCS.driver.findElement(By.id("nodeMsgModal"));
 	    Boolean m2 = new WebDriverWait(RegressionTestPCS.driver, 20).until(ExpectedConditions.textToBePresentInElement(text2,"Node id already in use."));
 	    if(m2.equals(true)) {
@@ -126,9 +125,8 @@ public class SuiteTestPCS{
 			System.out.println("Node id cannot be empty.");
 		}		
 		RegressionTestPCS.driver.findElement(By.id("newNodeForm")).clear();
-		RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys("nodetest5");
-		Thread.sleep(1000);
-		
+		RegressionTestPCS.driver.findElement(By.id("newNodeForm")).sendKeys(RegressionTestPCS.nodeName5);
+		Thread.sleep(3000);		
 		WebElement btnSubmitNewNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSubmitNewNode")));
 		btnSubmitNewNode.click();
 		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
@@ -142,7 +140,7 @@ public class SuiteTestPCS{
 			WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
 			WebElement elements2 = listOfElements.get(i).findElement(By.id("btnEditNode"));
 			String nodeName = elements.getText().toString();
-			if (nodeName.equals("nodetest5")) {
+			if (nodeName.equals(RegressionTestPCS.nodeName5)) {
 				System.out.println(nodeName);
 				btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
@@ -155,7 +153,7 @@ public class SuiteTestPCS{
 		for (int i = 0; i < listOfElements2.size(); i++) {
 			WebElement elements3 = listOfElements2.get(i).findElement(By.id("tableGroupNodeID"));
 			String nodeName2 = elements3.getText().toString();
-			if (nodeName2.equals("nodetest5\nEdit\nStop")) {
+			if (nodeName2.equals("node\nEdit\nStop")) {
 				System.out.println(nodeName2);
 				WebElement button = elements3.findElement(By.id("btnDeleteNode"));
 				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
@@ -181,16 +179,15 @@ public class SuiteTestPCS{
 	    	WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement elements2 = listOfElements.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();       	
-	    	if(nodeName.equals("nodetest1"))  {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2))  {
 	    		System.out.println(nodeName);	    	
 	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
-	    		//Thread.sleep(8000);
 	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
-	    		imputNodeName.sendKeys("nodePFC");
+	    		imputNodeName.sendKeys(RegressionTestPCS.nodeName2);
 	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
@@ -243,16 +240,15 @@ public class SuiteTestPCS{
 	    	WebElement elements =  listOfElements2.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement elements2 =  listOfElements2.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();  
-	    	if(nodeName.equals("nodetest2"))  {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName1))  {
 	    		System.out.println(nodeName);	    	
 	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
-	    		btnEditNodeID.click();	    			   
-	    		//Thread.sleep(1000);
+	    		btnEditNodeID.click();	
 	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
-	    		imputNodeName.sendKeys("nodePRC");
+	    		imputNodeName.sendKeys(RegressionTestPCS.nodeName1);
 	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
@@ -306,16 +302,15 @@ public class SuiteTestPCS{
 	    	WebElement elements =  listOfElements3.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement elements2 =  listOfElements3.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();  
-	    	if(nodeName.equals("nodetest3"))  {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName4))  {
 	    		System.out.println(nodeName);	
 	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);    		
 	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
-	    		//Thread.sleep(1000);
 	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	    		
 	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
-	    		imputNodeName.sendKeys("nodeTruck");
+	    		imputNodeName.sendKeys(RegressionTestPCS.nodeName4);
 	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);
 	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
@@ -345,7 +340,6 @@ public class SuiteTestPCS{
 	    		btnSaveNode.click();
 	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
-	    	    //Thread.sleep(1000);
 	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);
 	    	    WebElement btnImageTest = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
 	    		btnImageTest.click();
@@ -364,17 +358,6 @@ public class SuiteTestPCS{
 		String link4 = btnHome4.getAttribute("href");
 		RegressionTestPCS.driver.get(link4);
 		
-		
-		WebDriverWait waitbtnHomet = new WebDriverWait(RegressionTestPCS.driver, 50);
-		WebElement btnHomet = waitbtnHomet.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
-		String linkt = btnHomet.getAttribute("href");
-		RegressionTestPCS.driver.get(linkt);
-		
-		
-		
-		
-		
-	    
 		List <WebElement> listOfElements4 = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +listOfElements4.size());
 	    for (int i=0; i < listOfElements4.size();i++){
@@ -382,16 +365,15 @@ public class SuiteTestPCS{
 	    	WebElement elements =  listOfElements4.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement elements2 =  listOfElements4.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();  
-	    	if(nodeName.equals("nodetest4"))  {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName3))  {
 	    		System.out.println(nodeName);	
 	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
-	    		//Thread.sleep(3000);
 	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement imputNodeName = wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("imputNodeName")));
 	    		imputNodeName.clear();
-	    		imputNodeName.sendKeys("nodeIMC");
+	    		imputNodeName.sendKeys(RegressionTestPCS.nodeName3);
 	    		WebDriverWait wait3 = new WebDriverWait(RegressionTestPCS.driver, 80);	
 	    		WebElement imputTypeNode = wait3.until(ExpectedConditions.elementToBeClickable(By.id("imputTypeNode")));
 	    		imputTypeNode.click();
@@ -445,6 +427,12 @@ public class SuiteTestPCS{
 		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 		System.out.println("Number of elements:" +listOfElements.size());	
 	    for (int i=0; i < listOfElements.size();i++){
+	    	for (int j=0; j <50000; j++) {
+	    		if(RegressionTestPCS.driver.findElement(By.id("tableNodeID")).isDisplayed()) {
+	    			break;	    			
+	    		}	    		
+	    	}	    	
+	    	Thread.sleep(5000);
 	    	WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
 	    	String nodeName = elements.getText().toString(); 
 	    	WebElement elements2 = listOfElements.get(i).findElement(By.id("cycleTime"));
@@ -459,7 +447,7 @@ public class SuiteTestPCS{
 	    			break;
 	    		}
 	    	}   		    		    	
-	    	if(nodeName.equals("nodePFC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -468,7 +456,7 @@ public class SuiteTestPCS{
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
 	    	}
-	    	if(nodeName.equals("nodePRC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName1)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -476,7 +464,7 @@ public class SuiteTestPCS{
 				}else {
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
-	    	}if(nodeName.equals("nodeTruck")) {
+	    	}if(nodeName.equals(RegressionTestPCS.nodeName4)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -484,7 +472,7 @@ public class SuiteTestPCS{
 				}else {
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
-	    	}if(nodeName.equals("nodeIMC")) {
+	    	}if(nodeName.equals(RegressionTestPCS.nodeName3)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -533,7 +521,7 @@ public class SuiteTestPCS{
 	    			break;
 	    		}
 	    	}  
-	    	if(nodeName.equals("nodePFC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped");    			
@@ -542,7 +530,7 @@ public class SuiteTestPCS{
 					fail();
 				}
 	    	}
-	    	if(nodeName.equals("nodePRC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName1)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped"); 		    			
@@ -550,7 +538,7 @@ public class SuiteTestPCS{
 					System.out.println("Node "+nodeName+" is working"); 	
 					fail();
 				}
-	    	}if(nodeName.equals("nodeTruck")) {
+	    	}if(nodeName.equals(RegressionTestPCS.nodeName4)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped");
@@ -558,7 +546,7 @@ public class SuiteTestPCS{
 					System.out.println("Node "+nodeName+" is working");
 					fail();
 				}
-	    	}if(nodeName.equals("nodeIMC")) {
+	    	}if(nodeName.equals(RegressionTestPCS.nodeName3)) {
 	    		System.out.println(nodeName);
 	    		if (cycleTime1.equals(cycleTime2)) {
 	    			System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -591,7 +579,7 @@ public class SuiteTestPCS{
 	    			break;
 	    		}
 	    	}  
-	    	if(nodeName.equals("nodePFC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2)) {
 				System.out.println(nodeName);
 				if (cycleTime1.equals(cycleTime2)) {
 					System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -600,7 +588,7 @@ public class SuiteTestPCS{
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
 			}
-			if(nodeName.equals("nodePRC")) {
+			if(nodeName.equals(RegressionTestPCS.nodeName1)) {
 				System.out.println(nodeName);
 				if (cycleTime1.equals(cycleTime2)) {
 					System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -608,7 +596,7 @@ public class SuiteTestPCS{
 				}else {
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
-			}if(nodeName.equals("nodeTruck")) {
+			}if(nodeName.equals(RegressionTestPCS.nodeName4)) {
 				System.out.println(nodeName);
 				if (cycleTime1.equals(cycleTime2)) {
 					System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -616,7 +604,7 @@ public class SuiteTestPCS{
 				}else {
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
-			}if(nodeName.equals("nodeIMC")) {
+			}if(nodeName.equals(RegressionTestPCS.nodeName3)) {
 				System.out.println(nodeName);
 				if (cycleTime1.equals(cycleTime2)) {
 					System.out.println("Node "+nodeName+" is stoped"); 		  
@@ -628,19 +616,25 @@ public class SuiteTestPCS{
 		}	
 	}
 	
-	public void deleteNodeAllNodes() throws Exception {
-		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+	public void deleteAllNodes() throws Exception {
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 80);
 		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
-		String link = btnHome.getAttribute("href");
+		String link = btnHome.getAttribute("href");		
 		RegressionTestPCS.driver.get(link);	
+		
 		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 50);	
 		List <WebElement> tableNode = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +tableNode.size());
 	    for (int i=0; i < tableNode.size();i++){
-	    	WebElement tableNodeID =  tableNode.get(i).findElement(By.id("tableNodeID"));
-	    	WebElement btnEditNode =  tableNode.get(i).findElement(By.id("btnEditNode"));
+	    	for (int j=0; j< 9000; j++) {
+	    		if (tableNode.get(i).findElement(By.id("tableNodeID")).isDisplayed()) {
+	    			break;
+	    		}	
+	    	}
+	    	WebElement tableNodeID = tableNode.get(i).findElement(By.id("tableNodeID"));
+	    	WebElement btnEditNode = tableNode.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = tableNodeID.getText().toString();   	
-	    	if(nodeName.equals("nodePRC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName1)) {
 	    		System.out.println(nodeName);    		
 	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(btnEditNode));
 	    		btnEditNodeID.click();    		
@@ -649,7 +643,7 @@ public class SuiteTestPCS{
 	            for (int j=0; j < tableGroupNode.size();j++){
 	            	WebElement tableGroupNodeID =  tableGroupNode.get(j).findElement(By.id("tableGroupNodeID"));
 	            	String nodeName2 = tableGroupNodeID.getText().toString();  
-	            	if(nodeName2.contains("nodePRC")) {
+	            	if(nodeName2.contains(RegressionTestPCS.nodeName1)) {
 	            		System.out.println(nodeName2);
 	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
 	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
@@ -661,15 +655,60 @@ public class SuiteTestPCS{
 	            }break;
 	    	} 
 	    } 	
-	    RegressionTestPCS.driver.get(link);	
+		WebDriverWait waitbtnHome2 = new WebDriverWait(RegressionTestPCS.driver, 80);
+		WebElement btnHome2 = waitbtnHome2.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link2 = btnHome2.getAttribute("href");
+		RegressionTestPCS.driver.get(link2);	
+	    
+		tableNode = RegressionTestPCS.driver.findElements(By.id("tableNode"));
+	    System.out.println("Number of elements:" +tableNode.size());
+	    for (int i=0; i < tableNode.size();i++){
+	    	for (int j=0; j< 9000; j++) {
+	    		if (tableNode.get(i).findElement(By.id("tableNodeID")).isDisplayed()) {
+	    			break;
+	    		}	
+	    	}
+	    	WebElement tableNodeID =  tableNode.get(i).findElement(By.id("tableNodeID"));
+	    	WebElement btnEditNode =  tableNode.get(i).findElement(By.id("btnEditNode"));
+	    	String nodeName = tableNodeID.getText().toString();   	
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2)) {
+	    		System.out.println(nodeName);    		
+	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(btnEditNode));
+	    		btnEditNodeID.click();    		
+	            List <WebElement> tableGroupNode = RegressionTestPCS.driver.findElements(By.id("tableGroupNode"));
+	            System.out.println("Number of elements:" +tableGroupNode.size());
+	            for (int j=0; j < tableGroupNode.size();j++){
+	            	WebElement tableGroupNodeID =  tableGroupNode.get(j).findElement(By.id("tableGroupNodeID"));
+	            	String nodeName2 = tableGroupNodeID.getText().toString();  
+	            	if(nodeName2.contains(RegressionTestPCS.nodeName2)) {
+	            		System.out.println(nodeName2);
+	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
+	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
+	    				btnDeleteNode.click();
+	            	    new WebDriverWait(RegressionTestPCS.driver, 50).until(ExpectedConditions.alertIsPresent());
+	            	    RegressionTestPCS.driver.switchTo().alert().accept(); 
+	            		break;
+	            	}    	    	
+	            }break;
+	    	} 
+	    } 	
+		WebDriverWait waitbtnHome3 = new WebDriverWait(RegressionTestPCS.driver, 80);
+		WebElement btnHome3 = waitbtnHome3.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link3 = btnHome3.getAttribute("href");
+		RegressionTestPCS.driver.get(link3);	
 	    
 	    tableNode = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +tableNode.size());
 	    for (int i=0; i < tableNode.size();i++){
+	    	for (int j=0; j< 9000; j++) {
+	    		if (tableNode.get(i).findElement(By.id("tableNodeID")).isDisplayed()) {
+	    			break;
+	    		}	
+	    	}
 	    	WebElement tableNodeID =  tableNode.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement btnEditNode =  tableNode.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = tableNodeID.getText().toString();   	
-	    	if(nodeName.equals("nodePFC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName3)) {
 	    		System.out.println(nodeName);    		
 	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(btnEditNode));
 	    		btnEditNodeID.click();    		
@@ -678,7 +717,7 @@ public class SuiteTestPCS{
 	            for (int j=0; j < tableGroupNode.size();j++){
 	            	WebElement tableGroupNodeID =  tableGroupNode.get(j).findElement(By.id("tableGroupNodeID"));
 	            	String nodeName2 = tableGroupNodeID.getText().toString();  
-	            	if(nodeName2.contains("nodePFC")) {
+	            	if(nodeName2.contains(RegressionTestPCS.nodeName3)) {
 	            		System.out.println(nodeName2);
 	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
 	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
@@ -690,15 +729,23 @@ public class SuiteTestPCS{
 	            }break;
 	    	} 
 	    } 	
-	    RegressionTestPCS.driver.get(link);	
-	    
+		WebDriverWait waitbtnHome4 = new WebDriverWait(RegressionTestPCS.driver, 80);
+		WebElement btnHome4 = waitbtnHome4.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link4 = btnHome4.getAttribute("href");
+		RegressionTestPCS.driver.get(link4);
+		
 	    tableNode = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +tableNode.size());
 	    for (int i=0; i < tableNode.size();i++){
+	    	for (int j=0; j< 9000; j++) {
+	    		if (tableNode.get(i).findElement(By.id("tableNodeID")).isDisplayed()) {
+	    			break;
+	    		}	
+	    	}
 	    	WebElement tableNodeID =  tableNode.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement btnEditNode =  tableNode.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = tableNodeID.getText().toString();   	
-	    	if(nodeName.equals("nodeIMC")) {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName4)) {
 	    		System.out.println(nodeName);    		
 	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(btnEditNode));
 	    		btnEditNodeID.click();    		
@@ -707,7 +754,7 @@ public class SuiteTestPCS{
 	            for (int j=0; j < tableGroupNode.size();j++){
 	            	WebElement tableGroupNodeID =  tableGroupNode.get(j).findElement(By.id("tableGroupNodeID"));
 	            	String nodeName2 = tableGroupNodeID.getText().toString();  
-	            	if(nodeName2.contains("nodeIMC")) {
+	            	if(nodeName2.contains(RegressionTestPCS.nodeName4)) {
 	            		System.out.println(nodeName2);
 	    				WebElement button = tableGroupNodeID.findElement(By.id("btnDeleteNode"));
 	    				WebElement btnDeleteNode = wait.until(ExpectedConditions.elementToBeClickable(button));
@@ -719,7 +766,10 @@ public class SuiteTestPCS{
 	            }break;
 	    	} 
 	    } 	
-	    RegressionTestPCS.driver.get(link);	
+		WebDriverWait waitbtnHome5 = new WebDriverWait(RegressionTestPCS.driver, 80);
+		WebElement btnHome5 = waitbtnHome5.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link5 = btnHome5.getAttribute("href");
+		RegressionTestPCS.driver.get(link5);
 	}		
 	
 	public void setGlobalUnitMeasure() throws Exception {
@@ -768,10 +818,10 @@ public class SuiteTestPCS{
 	    for (int i=0; i < checkboxNode.size();i++){
 	    	WebElement checkboxNodeId =  checkboxNode.get(i).findElement(By.id("checkboxNodeId"));
 	    	String nodeName = checkboxNodeId.getText().toString();   	
-	    	if(nodeName.equals("nodePRC")) {	
+	    	if(nodeName.equals(RegressionTestPCS.nodeName1)) {	
 	    		checkboxNodeId.click();	    		 
 	    	}
-	    	if(nodeName.equals("nodeTruck")) {	
+	    	if(nodeName.equals(RegressionTestPCS.nodeName4)) {	
 	    		checkboxNodeId.click();	    		
 	    	}
 	    }
@@ -845,7 +895,7 @@ public class SuiteTestPCS{
 	    	WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement elements2 = listOfElements.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();       	
-	    	if(nodeName.equals("nodePFC"))  {
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2))  {
 	    		System.out.println(nodeName);	    	
 	    		WebElement btnEditNodeID = wait.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
