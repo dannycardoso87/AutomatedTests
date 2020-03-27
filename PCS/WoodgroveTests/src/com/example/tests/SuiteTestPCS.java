@@ -37,6 +37,7 @@ public class SuiteTestPCS{
 	    RegressionTestPCS.driver.findElement(By.id("pcspass")).clear();
 	    RegressionTestPCS.driver.findElement(By.id("pcspass")).sendKeys("test");
 	    RegressionTestPCS.driver.findElement(By.id("btnSubmit")).click();
+	    System.out.println("loginValidatePCS");
 	 }	
 	
 	public void createNodePCS() throws Exception {
@@ -84,6 +85,7 @@ public class SuiteTestPCS{
 		element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
 	    element.click();		
 		RegressionTestPCS.driver.get(link);
+		System.out.println("createNodePCS");
 	}	
 	
 	public void createExistingNode() throws Exception {
@@ -107,7 +109,7 @@ public class SuiteTestPCS{
 	    WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 20);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnCancelNewNode")));
 	    element.click();
-	    
+	    System.out.println("createExistingNode");
 	  }
 	
 	public void deleteNode() throws Exception {
@@ -163,6 +165,7 @@ public class SuiteTestPCS{
 				break;
 			}
 		}
+		System.out.println("deleteNode");
 	}	
 	
 	public void editNode() throws Exception {
@@ -181,7 +184,7 @@ public class SuiteTestPCS{
 	    	String nodeName = elements.getText().toString();       	
 	    	if(nodeName.equals(RegressionTestPCS.nodeName2))  {
 	    		System.out.println(nodeName);	    	
-	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		WebDriverWait wait1 = new WebDriverWait(RegressionTestPCS.driver, 100);	
 	    		WebElement btnEditNodeID = wait1.until(ExpectedConditions.elementToBeClickable(elements2));
 	    		btnEditNodeID.click();
 	    		WebDriverWait wait2 = new WebDriverWait(RegressionTestPCS.driver, 80);	
@@ -211,8 +214,9 @@ public class SuiteTestPCS{
 	    		WebElement imputCameraModel = wait7.until(ExpectedConditions.elementToBeClickable(By.id("imputCameraModel")));
 	    		imputCameraModel.click();
 	    		imputCameraModel.sendKeys("Demo (Folder)");	    	
-	    		imputCameraModel.click();	   
-	    		btnSaveNode = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		imputCameraModel.click();	
+	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		btnSaveNode = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();
 	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
@@ -220,8 +224,8 @@ public class SuiteTestPCS{
 	    	    WebElement btnImageTest = wait8.until(ExpectedConditions.elementToBeClickable(By.id("btnImageTest")));
 	    		btnImageTest.click();
 	    		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("full-img")));
-	    		WebDriverWait wait9 = new WebDriverWait(RegressionTestPCS.driver, 80);	
-	    		btnSaveNode = wait9.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
+	    		WebDriverWait wait10 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+	    		btnSaveNode = wait10.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveNode")));
 	    		btnSaveNode.click();	    			    		
 	    	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    	    RegressionTestPCS.driver.switchTo().alert().accept();
@@ -417,6 +421,7 @@ public class SuiteTestPCS{
 				break;
 			} 	
 	    }   	
+	    System.out.println("editNode");
 	}	
 	
 	public void statusCheck() throws Exception {
@@ -481,7 +486,8 @@ public class SuiteTestPCS{
 					System.out.println("Node "+nodeName+" is working"); 	    					
 				}
 	    	}		    	
-	    }					    
+	    }		
+	    System.out.println("statusCheck");
 	}
 	
 	public void stopSchedulerAllNodes() throws Exception {
@@ -614,6 +620,7 @@ public class SuiteTestPCS{
 				}
 			}		    	
 		}	
+	    System.out.println("stopSchedulerAllNodes");
 	}
 	
 	public void deleteAllNodes() throws Exception {
@@ -626,7 +633,7 @@ public class SuiteTestPCS{
 		List <WebElement> tableNode = RegressionTestPCS.driver.findElements(By.id("tableNode"));
 	    System.out.println("Number of elements:" +tableNode.size());
 	    for (int i=0; i < tableNode.size();i++){
-	    	for (int j=0; j< 9000; j++) {
+	    	for (int j=0; j< 20000; j++) {
 	    		if (tableNode.get(i).findElement(By.id("tableNodeID")).isDisplayed()) {
 	    			break;
 	    		}	
@@ -770,9 +777,11 @@ public class SuiteTestPCS{
 		WebElement btnHome5 = waitbtnHome5.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
 		String link5 = btnHome5.getAttribute("href");
 		RegressionTestPCS.driver.get(link5);
+		
+		System.out.println("deleteAllNodes");
 	}		
 	
-	public void setGlobalUnitMeasure() throws Exception {
+	public void setGlobalUnitMeasureToCm() throws Exception {
 		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
 		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
 		String link = btnHome.getAttribute("href");
@@ -791,7 +800,14 @@ public class SuiteTestPCS{
 		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
 	    RegressionTestPCS.driver.switchTo().alert().accept();	
 	    
-	    System.out.println("setGlobalUnitMeasure");
+	    WebDriverWait waitbtnHome2 = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome2 = waitbtnHome2.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link2 = btnHome2.getAttribute("href");
+		RegressionTestPCS.driver.get(link2);	
+
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("unitId"), "cm"));
+		
+	    System.out.println("setGlobalUnitMeasureToCm");
 	}
 	
 	public void getSnapshot() throws Exception {
@@ -867,18 +883,26 @@ public class SuiteTestPCS{
 	    button.click();
 	    button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnTakeSnapshot")));
 	    button.click();
-	    new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
-	    RegressionTestPCS.driver.switchTo().alert().accept(); 	    
+	    //new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    //RegressionTestPCS.driver.switchTo().alert().accept(); 
+	    
 	    /* Ticket APC-659 */
-//	    Thread.sleep(5000);
-//	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotMessage")));	          
-//	    message = button.getText();
-//	    if (message.contains("complete")){
-//			fail();
-//		}		  
+	    //Thread.sleep(5000);
+	    //button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("snapshotMessage")));	          
+	    //message = button.getText();
+	    //if (message.contains("complete")){
+		//	fail();
+		//}		  
 	    
 	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnCloseSnapshot")));
 	    button.click();
+	    
+	    WebDriverWait waitbtnHome2 = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome2 = waitbtnHome2.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link2 = btnHome2.getAttribute("href");
+		RegressionTestPCS.driver.get(link2);	
+	    
+	    System.out.println("getSnapshot");
 	    
 	}
 	
@@ -911,7 +935,103 @@ public class SuiteTestPCS{
 				break;
 			}     	
 	    }  
-		
+	    System.out.println("setCycleTime");
     }
+	
+	public void statusCheck2() throws Exception {
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);			
+		
+		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableNode"));
+		System.out.println("Number of elements:" +listOfElements.size());	
+	    for (int i=0; i < listOfElements.size();i++){
+	    	for (int j=0; j <50000; j++) {
+	    		if(RegressionTestPCS.driver.findElement(By.id("tableNodeID")).isDisplayed()) {
+	    			break;	    			
+	    		}	    		
+	    	}	    	
+	    	Thread.sleep(5000);
+	    	WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
+	    	String nodeName = elements.getText().toString(); 
+	    	WebElement elements2 = listOfElements.get(i).findElement(By.id("cycleTime"));
+	    	String cycleTime1 = elements2.getText().toString(); 
+	    	System.out.println(cycleTime1);
+	    	String cycleTime2 = null;	    	
+	    	for (int j=0; j < 6000;j++) {
+	    		elements2 = listOfElements.get(i).findElement(By.id("cycleTime"));
+	    		cycleTime2 = elements2.getText().toString(); 
+	    		if (!cycleTime1.equals(cycleTime2)) { 
+	    			System.out.println(cycleTime2);
+	    			break;
+	    		}
+	    	}   		    		    	
+	    	if(nodeName.equals(RegressionTestPCS.nodeName2)) {
+	    		System.out.println(nodeName);
+	    		if (cycleTime1.equals(cycleTime2)) {
+	    			System.out.println("Node "+nodeName+" is stoped"); 		  
+	    			fail();
+				}else {
+					System.out.println("Node "+nodeName+" is working"); 	    					
+				}
+	    	}
+	    	if(nodeName.equals(RegressionTestPCS.nodeName1)) {
+	    		System.out.println(nodeName);
+	    		if (cycleTime1.equals(cycleTime2)) {
+	    			System.out.println("Node "+nodeName+" is stoped"); 		  
+	    			fail();
+				}else {
+					System.out.println("Node "+nodeName+" is working"); 	    					
+				}
+	    	}if(nodeName.equals(RegressionTestPCS.nodeName4)) {
+	    		System.out.println(nodeName);
+	    		if (cycleTime1.equals(cycleTime2)) {
+	    			System.out.println("Node "+nodeName+" is stoped"); 		  
+	    			fail();
+				}else {
+					System.out.println("Node "+nodeName+" is working"); 	    					
+				}
+	    	}if(nodeName.equals(RegressionTestPCS.nodeName3)) {
+	    		System.out.println(nodeName);
+	    		if (cycleTime1.equals(cycleTime2)) {
+	    			System.out.println("Node "+nodeName+" is stoped"); 		  
+	    			fail();
+				}else {
+					System.out.println("Node "+nodeName+" is working"); 	    					
+				}
+	    	}		    	
+	    }			
+	    System.out.println("statusCheck2");
+	}
+	
+	public void setGlobalUnitMeasureToInches() throws Exception {
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link = btnHome.getAttribute("href");
+		RegressionTestPCS.driver.get(link);	
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 20);	
+		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSettings")));
+		button.click();
+		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnGlobalVariables")));
+		button.click();			
+		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("imputUnit")));
+		button.click();
+		button.sendKeys("inches");	    	
+		button.click();	
+		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveAll")));
+		button.click();			
+		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
+	    RegressionTestPCS.driver.switchTo().alert().accept();	
+	    
+	    WebDriverWait waitbtnHome2 = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebElement btnHome2 = waitbtnHome2.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
+		String link2 = btnHome2.getAttribute("href");
+		RegressionTestPCS.driver.get(link2);	
+
+		wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("unitId"), "inches"));
+		
+	    System.out.println("setGlobalUnitMeasureToInchies");
+	}
 	
 }

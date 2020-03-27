@@ -9,7 +9,6 @@
           <include name="TC001loginValidatePCS"/>
           <include name="TC007stopSchedulerAllNodes"/>
           <include name="TC012deleteAllNodes"/>
-          <include name="TC0011setCycleTime"/>
           <include name="tearDown"/>
           <include name="TC002createNodePCS"/>
           <include name="TC003createExistingNode"/>
@@ -19,6 +18,8 @@
           <include name="TC004deleteNode"/>
           <include name="setUp"/>
           <include name="TC008setGlobalUnitMeasure"/>
+          <include name="TC011setCycleTime"/>
+          <include name="TC013setGlobalUnitMeasureToInches"/>
         </methods>
       </class> <!-- src.com.example.tests.RegressionTestPCS -->
     </classes>

@@ -28,6 +28,8 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	public static String passwordCamera;
 	public static StringBuffer verificationErrors = new StringBuffer(); 
 	public final String pathChromeDriver = "C:\\Projects\\AutomatedTests\\Package\\chromedriver.exe";  	
+	//Test VM
+	//private final String pathChromeDriver =  "C:\\PCSNightlyBuild\\Tests\\chromedriver.exe";    
 	public static String nodeName1;
 	public static String nodeName2;
 	public static String nodeName3;
@@ -64,12 +66,12 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
 	public void TC003createExistingNode() throws Exception	{
-		createExistingNode();			
+//		createExistingNode();			
 	}
 	
 	@Test (priority=4, dependsOnMethods = { "TC003createExistingNode" })
 	public void TC004deleteNode() throws Exception	{
-		deleteNode();			
+//		deleteNode();			
 	}
 		
 	@Test (priority=5, dependsOnMethods = { "TC004deleteNode" })
@@ -89,27 +91,32 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=8, dependsOnMethods = { "TC007stopSchedulerAllNodes" })
 	public void TC008setGlobalUnitMeasure() throws Exception {
-		setGlobalUnitMeasure();	
+		setGlobalUnitMeasureToCm();	
 	}
 	
 	@Test (priority=9, dependsOnMethods = { "TC008setGlobalUnitMeasure" })
 	public void TC009statusCheck() throws Exception	{
-//		statusCheck();			
+		statusCheck2();			
 	}
 	
 	@Test (priority=10, dependsOnMethods = { "TC009statusCheck" })
 	public void TC010getSnapshot() throws Exception {
-//		getSnapshot();			
+		getSnapshot();			
 	}
 
 	@Test (priority=11, dependsOnMethods = { "TC010getSnapshot" })
-	public void TC0011setCycleTime() throws Exception {
+	public void TC011setCycleTime() throws Exception {
 //		setCycleTime();	
 	}	
 	
-	@Test (priority=12, dependsOnMethods = { "TC0011setCycleTime" })
+	@Test (priority=12, dependsOnMethods = { "TC011setCycleTime" })
 	public void TC012deleteAllNodes() throws Exception{
 		deleteAllNodes();			
+	}
+	
+	@Test (priority=13, dependsOnMethods = { "TC012deleteAllNodes" })
+	public void TC013setGlobalUnitMeasureToInches() throws Exception{
+		setGlobalUnitMeasureToInches();			
 	}
 	
 	@AfterClass(alwaysRun = true)
