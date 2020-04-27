@@ -54,7 +54,7 @@ public class TC0011LoginValidatePOP {
 		    //Submit
 		    driver.findElement(By.id("btnSubmit")).click();
 		    
-		 }
+		 }			
 		
 		  @AfterClass(alwaysRun = true)
 		  public void tearDown() throws Exception {

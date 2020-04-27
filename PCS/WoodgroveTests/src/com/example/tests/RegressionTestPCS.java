@@ -22,7 +22,8 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	}		
 
 	public static WebDriver driver;
-	public static String baseUrl;
+	public static String baseUrlPCS;
+	public static String baseUrlPOP;
 	public static String urlCamera;
 	public static String usernameCamera;
 	public static String passwordCamera;
@@ -35,23 +36,23 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	public static String nodeName3;
 	public static String nodeName4;
 	public static String nodeName5;
-	
 
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.chrome.driver", pathChromeDriver);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		baseUrl = "https://localhost:3002/"; 
+		baseUrlPCS = "https://localhost:3002/"; 		
+		baseUrlPOP = "https://localhost/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		urlCamera = "C:\\Users\\Danielly Cardoso\\OneDrive - Woodgrove Technologies Inc\\Desktop\\nodefiles\\PFC1\\raw_images"; 
+		urlCamera = "C:\\Users\\Danielly Cardoso\\Documentos\\Woodgrove\\PCS\\Arquivos de config para teste\\PRC\\raw_images"; 
 		usernameCamera = "axis";
 		passwordCamera = "root";
 		nodeName1 = "nodePRC";
 		nodeName2 = "nodePFC";
 		nodeName3 = "nodeIMC";
 		nodeName4 = "nodeTruck";
-		nodeName5 = "node";		
+		nodeName5 = "node";				
 	}
 	
 	@Test (priority=1)	
@@ -61,61 +62,133 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=2, dependsOnMethods = { "TC001loginValidatePCS" })
 	public void TC002createNodePCS() throws Exception	{
-		createNodePCS();			
+		createNode();			
 	}
 	
 	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
-	public void TC003createExistingNode() throws Exception	{
-//		createExistingNode();			
+	public void TC003createExistingNodePCS() throws Exception	{
+		createExistingNode();			
 	}
 	
-	@Test (priority=4, dependsOnMethods = { "TC003createExistingNode" })
-	public void TC004deleteNode() throws Exception	{
-//		deleteNode();			
+	@Test (priority=4, dependsOnMethods = { "TC003createExistingNodePCS" })
+	public void TC004deleteNodePCS() throws Exception	{
+		deleteNode();			
 	}
 		
-	@Test (priority=5, dependsOnMethods = { "TC004deleteNode" })
-	public void TC005editNode() throws Exception	{
+	@Test (priority=5, dependsOnMethods = { "TC004deleteNodePCS" })
+	public void TC005editNodePCS() throws Exception	{
 		editNode();			
 	}
 	
-	@Test (priority=6, dependsOnMethods = { "TC005editNode" })
-	public void TC006statusCheck() throws Exception	{
+	@Test (priority=6, dependsOnMethods = { "TC005editNodePCS" })
+	public void TC006statusCheckPCS() throws Exception	{
 		statusCheck();			
 	}
 	
-	@Test (priority=7, dependsOnMethods = { "TC006statusCheck" })
-	public void TC007stopSchedulerAllNodes() throws Exception{
-		stopSchedulerAllNodes();
+	@Test (priority=7, dependsOnMethods = { "TC006statusCheckPCS" })
+	public void TC007setSchedulerAllNodesPCS() throws Exception{
+		setSchedulerAllNodes();
 	}	
 	
-	@Test (priority=8, dependsOnMethods = { "TC007stopSchedulerAllNodes" })
-	public void TC008setGlobalUnitMeasure() throws Exception {
+	@Test (priority=8, dependsOnMethods = { "TC007setSchedulerAllNodesPCS" })
+	public void TC008setGlobalUnitMeasurePCS() throws Exception {
 		setGlobalUnitMeasureToCm();	
 	}
 	
-	@Test (priority=9, dependsOnMethods = { "TC008setGlobalUnitMeasure" })
-	public void TC009statusCheck() throws Exception	{
-		statusCheck2();			
+	@Test (priority=9, dependsOnMethods = { "TC008setGlobalUnitMeasurePCS" })
+	public void TC009statusCheckPCS() throws Exception	{
+		statusCheckAfterSetGlobalUnitMeasure();			
 	}
 	
-	@Test (priority=10, dependsOnMethods = { "TC009statusCheck" })
-	public void TC010getSnapshot() throws Exception {
+	@Test (priority=10, dependsOnMethods = { "TC009statusCheckPCS" })
+	public void TC010getSnapshotPCS() throws Exception {
 		getSnapshot();			
 	}
-
-	@Test (priority=11, dependsOnMethods = { "TC010getSnapshot" })
-	public void TC011setCycleTime() throws Exception {
-//		setCycleTime();	
+	
+	@Test (priority=11, dependsOnMethods = { "TC010getSnapshotPCS" })
+	public void TC011setAlarmPCS() throws Exception {
+		//setAlarm();			
 	}	
 	
-	@Test (priority=12, dependsOnMethods = { "TC011setCycleTime" })
-	public void TC012deleteAllNodes() throws Exception{
+	@Test (priority=12, dependsOnMethods = { "TC011setAlarmPCS" })
+	public void TC012saveAndApplyMultipleNodePCS() throws Exception {
+		//saveAndApplyMultipleNode();		
+	}		
+	
+	@Test (priority=13, dependsOnMethods = { "TC012saveAndApplyMultipleNodePCS" })
+	public void TC013setCycleTimePCS() throws Exception {
+		//setCycleTime();	
+	}	
+	
+	@Test (priority=14, dependsOnMethods = { "TC013setCycleTimePCS" })
+	public void TC014setScheduleTypePCS() throws Exception{
+		//setScheduleType();			
+	}
+	
+	//APC-685
+	/*@Test (priority=15, dependsOnMethods = { "TC014setScheduleTypePCS" })
+	public void TC015setTruckEventPCS() throws Exception{
+		setTruckEvent();			
+	}*/
+	
+	//APC-673
+	/*@Test (priority=16, dependsOnMethods = { "TC015setTruckEventPCS" })
+	public void TC016statusCheckServicePCS() throws Exception{
+		statusCheckService();			
+	}*/
+	
+	//APC-673
+	/*@Test (priority=17, dependsOnMethods = { "TC015setTruckEventPCS" })
+	public void TC017imageTrailPCS() throws Exception{
+		imageTrail();			
+	}*/
+	
+	//APC-673
+	/*@Test (priority=18, dependsOnMethods = { "TC015setTruckEventPCS" })
+	public void TC018automaticExposureAdjustmentsPCS() throws Exception{
+		automaticExposureAdjustments();			
+	}*/
+	
+	//APC-673
+	/*@Test (priority=19, dependsOnMethods = { "TC015setTruckEventPCS" })
+	public void TC019truckEventBurstPCS() throws Exception{
+		truckEventBurst();			
+	}*/
+	
+	//APC-673
+	/*@Test (priority=20, dependsOnMethods = { "TC015setTruckEventPCS" })
+	public void TC020imageBufferTestPCS() throws Exception{
+		imageBufferTest();			
+	}*/
+	
+	
+	
+	
+	@Test (priority=15, dependsOnMethods = { "TC014setScheduleTypePCS" })
+	public void TC015loginValidatePOP() throws Exception{
+		loginValidatePOP();			
+	}
+		
+	@Test (priority=16, dependsOnMethods = { "TC015loginValidatePOP" })
+	public void TC016checkCamerasPOP() throws Exception{
+		checkCameras();			
+	}
+	
+	@Test (priority=17, dependsOnMethods = { "TC016checkCamerasPOP" })
+	public void TC017createNewCameraPOP() throws Exception{
+		createNewCamera();			
+	}
+	
+	
+	
+	
+	@Test (priority=18, dependsOnMethods = { "TC017createNewCameraPOP" })
+	public void TC018deleteAllNodesPCS() throws Exception{
 		deleteAllNodes();			
 	}
 	
-	@Test (priority=13, dependsOnMethods = { "TC012deleteAllNodes" })
-	public void TC013setGlobalUnitMeasureToInches() throws Exception{
+	@Test (priority=19, dependsOnMethods = { "TC018deleteAllNodesPCS" })
+	public void TC019setGlobalUnitMeasureToInchesPCS() throws Exception{
 		setGlobalUnitMeasureToInches();			
 	}
 	

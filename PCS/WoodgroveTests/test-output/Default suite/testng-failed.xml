@@ -5,21 +5,27 @@
     <classes>
       <class name="src.com.example.tests.RegressionTestPCS">
         <methods>
-          <include name="TC009statusCheck"/>
+          <include name="TC003createExistingNodePCS"/>
+          <include name="TC019setGlobalUnitMeasureToInchesPCS"/>
           <include name="TC001loginValidatePCS"/>
-          <include name="TC007stopSchedulerAllNodes"/>
-          <include name="TC012deleteAllNodes"/>
+          <include name="TC008setGlobalUnitMeasurePCS"/>
+          <include name="TC013setCycleTimePCS"/>
+          <include name="TC018deleteAllNodesPCS"/>
+          <include name="TC010getSnapshotPCS"/>
+          <include name="TC017createNewCameraPOP"/>
+          <include name="TC011setAlarmPCS"/>
           <include name="tearDown"/>
           <include name="TC002createNodePCS"/>
-          <include name="TC003createExistingNode"/>
-          <include name="TC010getSnapshot"/>
-          <include name="TC005editNode"/>
-          <include name="TC006statusCheck"/>
-          <include name="TC004deleteNode"/>
+          <include name="TC015loginValidatePOP"/>
+          <include name="TC009statusCheckPCS"/>
+          <include name="TC016checkCamerasPOP"/>
+          <include name="TC012saveAndApplyMultipleNodePCS"/>
+          <include name="TC005editNodePCS"/>
+          <include name="TC014setScheduleTypePCS"/>
+          <include name="TC006statusCheckPCS"/>
+          <include name="TC004deleteNodePCS"/>
           <include name="setUp"/>
-          <include name="TC008setGlobalUnitMeasure"/>
-          <include name="TC011setCycleTime"/>
-          <include name="TC013setGlobalUnitMeasureToInches"/>
+          <include name="TC007setSchedulerAllNodesPCS"/>
         </methods>
       </class> <!-- src.com.example.tests.RegressionTestPCS -->
     </classes>

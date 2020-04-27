@@ -1,69 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
+<testng-results skipped="0" failed="0" ignored="0" total="19" passed="19">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="164950" started-at="2020-03-26T21:06:03 EDT" finished-at="2020-03-26T21:08:48 EDT">
+  <suite name="Default suite" duration-ms="269960" started-at="2020-04-23T13:13:35 EDT" finished-at="2020-04-23T13:18:05 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="164950" started-at="2020-03-26T21:06:03 EDT" finished-at="2020-03-26T21:08:48 EDT">
+    <test name="Default test" duration-ms="269960" started-at="2020-04-23T13:13:35 EDT" finished-at="2020-04-23T13:18:05 EDT">
       <class name="src.com.example.tests.RegressionTestPCS">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="setUp" is-config="true" duration-ms="9730" started-at="2020-03-26T21:06:03 EDT" finished-at="2020-03-26T21:06:13 EDT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="setUp" is-config="true" duration-ms="9703" started-at="2020-04-23T13:13:35 EDT" finished-at="2020-04-23T13:13:45 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="TC001loginValidatePCS()[pri:1, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC001loginValidatePCS" duration-ms="1712" started-at="2020-03-26T21:06:13 EDT" finished-at="2020-03-26T21:06:14 EDT">
+        <test-method status="PASS" signature="TC001loginValidatePCS()[pri:1, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC001loginValidatePCS" duration-ms="2049" started-at="2020-04-23T13:13:45 EDT" finished-at="2020-04-23T13:13:47 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC001loginValidatePCS -->
-        <test-method status="PASS" signature="TC002createNodePCS()[pri:2, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC002createNodePCS" duration-ms="3577" started-at="2020-03-26T21:06:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC001loginValidatePCS" finished-at="2020-03-26T21:06:18 EDT">
+        <test-method status="PASS" signature="TC002createNodePCS()[pri:2, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC002createNodePCS" duration-ms="3596" started-at="2020-04-23T13:13:47 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC001loginValidatePCS" finished-at="2020-04-23T13:13:50 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC002createNodePCS -->
-        <test-method status="PASS" signature="TC003createExistingNode()[pri:3, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC003createExistingNode" duration-ms="1" started-at="2020-03-26T21:06:18 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC002createNodePCS" finished-at="2020-03-26T21:06:18 EDT">
+        <test-method status="PASS" signature="TC003createExistingNodePCS()[pri:3, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC003createExistingNodePCS" duration-ms="1001" started-at="2020-04-23T13:13:50 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC002createNodePCS" finished-at="2020-04-23T13:13:51 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC003createExistingNode -->
-        <test-method status="PASS" signature="TC004deleteNode()[pri:4, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC004deleteNode" duration-ms="0" started-at="2020-03-26T21:06:18 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC003createExistingNode" finished-at="2020-03-26T21:06:18 EDT">
+        </test-method> <!-- TC003createExistingNodePCS -->
+        <test-method status="PASS" signature="TC004deleteNodePCS()[pri:4, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC004deleteNodePCS" duration-ms="5201" started-at="2020-04-23T13:13:51 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC003createExistingNodePCS" finished-at="2020-04-23T13:13:57 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC004deleteNode -->
-        <test-method status="PASS" signature="TC005editNode()[pri:5, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC005editNode" duration-ms="18558" started-at="2020-03-26T21:06:18 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC004deleteNode" finished-at="2020-03-26T21:06:37 EDT">
+        </test-method> <!-- TC004deleteNodePCS -->
+        <test-method status="PASS" signature="TC005editNodePCS()[pri:5, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC005editNodePCS" duration-ms="17629" started-at="2020-04-23T13:13:57 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC004deleteNodePCS" finished-at="2020-04-23T13:14:14 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC005editNode -->
-        <test-method status="PASS" signature="TC006statusCheck()[pri:6, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC006statusCheck" duration-ms="36130" started-at="2020-03-26T21:06:37 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC005editNode" finished-at="2020-03-26T21:07:13 EDT">
+        </test-method> <!-- TC005editNodePCS -->
+        <test-method status="PASS" signature="TC006statusCheckPCS()[pri:6, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC006statusCheckPCS" duration-ms="35016" started-at="2020-04-23T13:14:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC005editNodePCS" finished-at="2020-04-23T13:14:49 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC006statusCheck -->
-        <test-method status="PASS" signature="TC007stopSchedulerAllNodes()[pri:7, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC007stopSchedulerAllNodes" duration-ms="19595" started-at="2020-03-26T21:07:13 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC006statusCheck" finished-at="2020-03-26T21:07:32 EDT">
+        </test-method> <!-- TC006statusCheckPCS -->
+        <test-method status="PASS" signature="TC007setSchedulerAllNodesPCS()[pri:7, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC007setSchedulerAllNodesPCS" duration-ms="22494" started-at="2020-04-23T13:14:49 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC006statusCheckPCS" finished-at="2020-04-23T13:15:12 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC007stopSchedulerAllNodes -->
-        <test-method status="PASS" signature="TC008setGlobalUnitMeasure()[pri:8, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC008setGlobalUnitMeasure" duration-ms="1083" started-at="2020-03-26T21:07:32 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC007stopSchedulerAllNodes" finished-at="2020-03-26T21:07:33 EDT">
+        </test-method> <!-- TC007setSchedulerAllNodesPCS -->
+        <test-method status="PASS" signature="TC008setGlobalUnitMeasurePCS()[pri:8, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC008setGlobalUnitMeasurePCS" duration-ms="21950" started-at="2020-04-23T13:15:12 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC007setSchedulerAllNodesPCS" finished-at="2020-04-23T13:15:34 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC008setGlobalUnitMeasure -->
-        <test-method status="PASS" signature="TC009statusCheck()[pri:9, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC009statusCheck" duration-ms="39608" started-at="2020-03-26T21:07:33 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC008setGlobalUnitMeasure" finished-at="2020-03-26T21:08:13 EDT">
+        </test-method> <!-- TC008setGlobalUnitMeasurePCS -->
+        <test-method status="PASS" signature="TC009statusCheckPCS()[pri:9, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC009statusCheckPCS" duration-ms="33565" started-at="2020-04-23T13:15:34 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC008setGlobalUnitMeasurePCS" finished-at="2020-04-23T13:16:07 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC009statusCheck -->
-        <test-method status="PASS" signature="TC010getSnapshot()[pri:10, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC010getSnapshot" duration-ms="31191" started-at="2020-03-26T21:08:13 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC009statusCheck" finished-at="2020-03-26T21:08:44 EDT">
+        </test-method> <!-- TC009statusCheckPCS -->
+        <test-method status="PASS" signature="TC010getSnapshotPCS()[pri:10, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC010getSnapshotPCS" duration-ms="81598" started-at="2020-04-23T13:16:07 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC009statusCheckPCS" finished-at="2020-04-23T13:17:29 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC010getSnapshot -->
-        <test-method status="PASS" signature="TC011setCycleTime()[pri:11, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC011setCycleTime" duration-ms="0" started-at="2020-03-26T21:08:44 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC010getSnapshot" finished-at="2020-03-26T21:08:44 EDT">
+        </test-method> <!-- TC010getSnapshotPCS -->
+        <test-method status="PASS" signature="TC011setAlarmPCS()[pri:11, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC011setAlarmPCS" duration-ms="0" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC010getSnapshotPCS" finished-at="2020-04-23T13:17:29 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC011setCycleTime -->
-        <test-method status="PASS" signature="TC012deleteAllNodes()[pri:12, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC012deleteAllNodes" duration-ms="2094" started-at="2020-03-26T21:08:44 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC011setCycleTime" finished-at="2020-03-26T21:08:46 EDT">
+        </test-method> <!-- TC011setAlarmPCS -->
+        <test-method status="PASS" signature="TC012saveAndApplyMultipleNodePCS()[pri:12, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC012saveAndApplyMultipleNodePCS" duration-ms="0" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC011setAlarmPCS" finished-at="2020-04-23T13:17:29 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC012deleteAllNodes -->
-        <test-method status="PASS" signature="TC013setGlobalUnitMeasureToInches()[pri:13, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC013setGlobalUnitMeasureToInches" duration-ms="1022" started-at="2020-03-26T21:08:46 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC012deleteAllNodes" finished-at="2020-03-26T21:08:47 EDT">
+        </test-method> <!-- TC012saveAndApplyMultipleNodePCS -->
+        <test-method status="PASS" signature="TC013setCycleTimePCS()[pri:13, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC013setCycleTimePCS" duration-ms="1" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC012saveAndApplyMultipleNodePCS" finished-at="2020-04-23T13:17:29 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC013setGlobalUnitMeasureToInches -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="tearDown" is-config="true" duration-ms="632" started-at="2020-03-26T21:08:47 EDT" finished-at="2020-03-26T21:08:48 EDT">
+        </test-method> <!-- TC013setCycleTimePCS -->
+        <test-method status="PASS" signature="TC014setScheduleTypePCS()[pri:14, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC014setScheduleTypePCS" duration-ms="1" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC013setCycleTimePCS" finished-at="2020-04-23T13:17:29 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC014setScheduleTypePCS -->
+        <test-method status="PASS" signature="TC015loginValidatePOP()[pri:15, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC015loginValidatePOP" duration-ms="17988" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC014setScheduleTypePCS" finished-at="2020-04-23T13:17:47 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC015loginValidatePOP -->
+        <test-method status="PASS" signature="TC016checkCamerasPOP()[pri:16, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC016checkCamerasPOP" duration-ms="11256" started-at="2020-04-23T13:17:47 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC015loginValidatePOP" finished-at="2020-04-23T13:17:58 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC016checkCamerasPOP -->
+        <test-method status="PASS" signature="TC017createNewCameraPOP()[pri:17, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC017createNewCameraPOP" duration-ms="870" started-at="2020-04-23T13:17:58 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC016checkCamerasPOP" finished-at="2020-04-23T13:17:59 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC017createNewCameraPOP -->
+        <test-method status="PASS" signature="TC018deleteAllNodesPCS()[pri:18, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC018deleteAllNodesPCS" duration-ms="4298" started-at="2020-04-23T13:17:59 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC017createNewCameraPOP" finished-at="2020-04-23T13:18:03 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC018deleteAllNodesPCS -->
+        <test-method status="PASS" signature="TC019setGlobalUnitMeasureToInchesPCS()[pri:19, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC019setGlobalUnitMeasureToInchesPCS" duration-ms="1068" started-at="2020-04-23T13:18:03 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC018deleteAllNodesPCS" finished-at="2020-04-23T13:18:04 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC019setGlobalUnitMeasureToInchesPCS -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="tearDown" is-config="true" duration-ms="628" started-at="2020-04-23T13:18:04 EDT" finished-at="2020-04-23T13:18:05 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
