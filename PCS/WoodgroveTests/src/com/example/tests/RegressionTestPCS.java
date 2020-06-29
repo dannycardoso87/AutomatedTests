@@ -62,42 +62,42 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=2, dependsOnMethods = { "TC001loginValidatePCS" })
 	public void TC002createNodePCS() throws Exception	{
-		createNode();			
+		//createNode();			
 	}
 	
 	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
 	public void TC003createExistingNodePCS() throws Exception	{
-		createExistingNode();			
+		//createExistingNode();			
 	}
 	
 	@Test (priority=4, dependsOnMethods = { "TC003createExistingNodePCS" })
 	public void TC004deleteNodePCS() throws Exception	{
-		deleteNode();			
+		//deleteNode();			
 	}
 		
 	@Test (priority=5, dependsOnMethods = { "TC004deleteNodePCS" })
 	public void TC005editNodePCS() throws Exception	{
-		editNode();			
+		//editNode();			
 	}
 	
 	@Test (priority=6, dependsOnMethods = { "TC005editNodePCS" })
 	public void TC006statusCheckPCS() throws Exception	{
-		statusCheck();			
+		//statusCheck();			
 	}
 	
 	@Test (priority=7, dependsOnMethods = { "TC006statusCheckPCS" })
 	public void TC007setSchedulerAllNodesPCS() throws Exception{
-		setSchedulerAllNodes();
+		//setSchedulerAllNodes();
 	}	
 	
 	@Test (priority=8, dependsOnMethods = { "TC007setSchedulerAllNodesPCS" })
 	public void TC008setGlobalUnitMeasurePCS() throws Exception {
-		setGlobalUnitMeasureToCm();	
+		//setGlobalUnitMeasureToCm();	
 	}
 	
 	@Test (priority=9, dependsOnMethods = { "TC008setGlobalUnitMeasurePCS" })
 	public void TC009statusCheckPCS() throws Exception	{
-		statusCheckAfterSetGlobalUnitMeasure();			
+		//statusCheckAfterSetGlobalUnitMeasure();			
 	}
 	
 	@Test (priority=10, dependsOnMethods = { "TC009statusCheckPCS" })
@@ -166,17 +166,27 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=15, dependsOnMethods = { "TC014setScheduleTypePCS" })
 	public void TC015loginValidatePOP() throws Exception{
-		loginValidatePOP();			
+	//	loginValidatePOP();			
 	}
 		
 	@Test (priority=16, dependsOnMethods = { "TC015loginValidatePOP" })
 	public void TC016checkCamerasPOP() throws Exception{
-		checkCameras();			
+	//	checkCameras();			
 	}
 	
 	@Test (priority=17, dependsOnMethods = { "TC016checkCamerasPOP" })
 	public void TC017createNewCameraPOP() throws Exception{
-		createNewCamera();			
+	//	createNewCamera();			
+	}
+	
+	@Test (priority=18, dependsOnMethods = { "TC017createNewCameraPOP" })
+	public void TC018createDisplayGroupPOP() throws Exception{
+	//	createDisplayGroup();			
+	}
+	
+	@Test (priority=19, dependsOnMethods = { "TC018createDisplayGroupPOP" })
+	public void TC019checkDisplayGroupPOP() throws Exception{
+	//	checkDisplayGroup();			
 	}
 	
 	
@@ -184,12 +194,12 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=18, dependsOnMethods = { "TC017createNewCameraPOP" })
 	public void TC018deleteAllNodesPCS() throws Exception{
-		deleteAllNodes();			
+		//deleteAllNodes();			
 	}
 	
 	@Test (priority=19, dependsOnMethods = { "TC018deleteAllNodesPCS" })
 	public void TC019setGlobalUnitMeasureToInchesPCS() throws Exception{
-		setGlobalUnitMeasureToInches();			
+		//setGlobalUnitMeasureToInches();			
 	}
 	
 	@AfterClass(alwaysRun = true)

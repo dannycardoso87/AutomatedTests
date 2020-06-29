@@ -1,93 +1,477 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="19" passed="19">
+<testng-results skipped="11" failed="1" ignored="0" total="21" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="269960" started-at="2020-04-23T13:13:35 EDT" finished-at="2020-04-23T13:18:05 EDT">
+  <suite name="Default suite" duration-ms="78884" started-at="2020-06-29T15:44:07 EDT" finished-at="2020-06-29T15:45:26 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="269960" started-at="2020-04-23T13:13:35 EDT" finished-at="2020-04-23T13:18:05 EDT">
+    <test name="Default test" duration-ms="78884" started-at="2020-06-29T15:44:07 EDT" finished-at="2020-06-29T15:45:26 EDT">
       <class name="src.com.example.tests.RegressionTestPCS">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="setUp" is-config="true" duration-ms="9703" started-at="2020-04-23T13:13:35 EDT" finished-at="2020-04-23T13:13:45 EDT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="setUp" is-config="true" duration-ms="5680" started-at="2020-06-29T15:44:07 EDT" finished-at="2020-06-29T15:44:13 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="TC001loginValidatePCS()[pri:1, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC001loginValidatePCS" duration-ms="2049" started-at="2020-04-23T13:13:45 EDT" finished-at="2020-04-23T13:13:47 EDT">
+        <test-method status="PASS" signature="TC001loginValidatePCS()[pri:1, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC001loginValidatePCS" duration-ms="1134" started-at="2020-06-29T15:44:13 EDT" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC001loginValidatePCS -->
-        <test-method status="PASS" signature="TC002createNodePCS()[pri:2, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC002createNodePCS" duration-ms="3596" started-at="2020-04-23T13:13:47 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC001loginValidatePCS" finished-at="2020-04-23T13:13:50 EDT">
+        <test-method status="PASS" signature="TC002createNodePCS()[pri:2, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC002createNodePCS" duration-ms="0" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC001loginValidatePCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC002createNodePCS -->
-        <test-method status="PASS" signature="TC003createExistingNodePCS()[pri:3, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC003createExistingNodePCS" duration-ms="1001" started-at="2020-04-23T13:13:50 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC002createNodePCS" finished-at="2020-04-23T13:13:51 EDT">
+        <test-method status="PASS" signature="TC003createExistingNodePCS()[pri:3, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC003createExistingNodePCS" duration-ms="1" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC002createNodePCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC003createExistingNodePCS -->
-        <test-method status="PASS" signature="TC004deleteNodePCS()[pri:4, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC004deleteNodePCS" duration-ms="5201" started-at="2020-04-23T13:13:51 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC003createExistingNodePCS" finished-at="2020-04-23T13:13:57 EDT">
+        <test-method status="PASS" signature="TC004deleteNodePCS()[pri:4, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC004deleteNodePCS" duration-ms="1" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC003createExistingNodePCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC004deleteNodePCS -->
-        <test-method status="PASS" signature="TC005editNodePCS()[pri:5, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC005editNodePCS" duration-ms="17629" started-at="2020-04-23T13:13:57 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC004deleteNodePCS" finished-at="2020-04-23T13:14:14 EDT">
+        <test-method status="PASS" signature="TC005editNodePCS()[pri:5, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC005editNodePCS" duration-ms="1" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC004deleteNodePCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC005editNodePCS -->
-        <test-method status="PASS" signature="TC006statusCheckPCS()[pri:6, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC006statusCheckPCS" duration-ms="35016" started-at="2020-04-23T13:14:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC005editNodePCS" finished-at="2020-04-23T13:14:49 EDT">
+        <test-method status="PASS" signature="TC006statusCheckPCS()[pri:6, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC006statusCheckPCS" duration-ms="0" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC005editNodePCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC006statusCheckPCS -->
-        <test-method status="PASS" signature="TC007setSchedulerAllNodesPCS()[pri:7, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC007setSchedulerAllNodesPCS" duration-ms="22494" started-at="2020-04-23T13:14:49 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC006statusCheckPCS" finished-at="2020-04-23T13:15:12 EDT">
+        <test-method status="PASS" signature="TC007setSchedulerAllNodesPCS()[pri:7, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC007setSchedulerAllNodesPCS" duration-ms="0" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC006statusCheckPCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC007setSchedulerAllNodesPCS -->
-        <test-method status="PASS" signature="TC008setGlobalUnitMeasurePCS()[pri:8, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC008setGlobalUnitMeasurePCS" duration-ms="21950" started-at="2020-04-23T13:15:12 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC007setSchedulerAllNodesPCS" finished-at="2020-04-23T13:15:34 EDT">
+        <test-method status="PASS" signature="TC008setGlobalUnitMeasurePCS()[pri:8, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC008setGlobalUnitMeasurePCS" duration-ms="1" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC007setSchedulerAllNodesPCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC008setGlobalUnitMeasurePCS -->
-        <test-method status="PASS" signature="TC009statusCheckPCS()[pri:9, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC009statusCheckPCS" duration-ms="33565" started-at="2020-04-23T13:15:34 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC008setGlobalUnitMeasurePCS" finished-at="2020-04-23T13:16:07 EDT">
+        <test-method status="PASS" signature="TC009statusCheckPCS()[pri:9, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC009statusCheckPCS" duration-ms="1" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC008setGlobalUnitMeasurePCS" finished-at="2020-06-29T15:44:14 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC009statusCheckPCS -->
-        <test-method status="PASS" signature="TC010getSnapshotPCS()[pri:10, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC010getSnapshotPCS" duration-ms="81598" started-at="2020-04-23T13:16:07 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC009statusCheckPCS" finished-at="2020-04-23T13:17:29 EDT">
+        <test-method status="FAIL" signature="TC010getSnapshotPCS()[pri:10, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC010getSnapshotPCS" duration-ms="71399" started-at="2020-06-29T15:44:14 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC009statusCheckPCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.id: inputRawImages (tried for 60 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: inputRawImages (tried for 60 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at src.com.example.tests.SuiteTestPCS.getSnapshot(SuiteTestPCS.java:846)
+at src.com.example.tests.RegressionTestPCS.TC010getSnapshotPCS(RegressionTestPCS.java:105)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#inputRawImages"}
+  (Session info: chrome=83.0.4103.116)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-QSPLCG3', ip: '10.10.10.215', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.14 (be04594a2b841..., userDataDir: C:\Users\DANIEL~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57359}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 201b99e4cb08f53033a76cf7087cbfb4
+*** Element info: {Using=id, value=inputRawImages}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC010getSnapshotPCS -->
-        <test-method status="PASS" signature="TC011setAlarmPCS()[pri:11, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC011setAlarmPCS" duration-ms="0" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC010getSnapshotPCS" finished-at="2020-04-23T13:17:29 EDT">
+        <test-method status="SKIP" signature="TC011setAlarmPCS()[pri:11, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC011setAlarmPCS" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC010getSnapshotPCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC011setAlarmPCS()[pri:11, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC011setAlarmPCS()[pri:11, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC011setAlarmPCS -->
-        <test-method status="PASS" signature="TC012saveAndApplyMultipleNodePCS()[pri:12, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC012saveAndApplyMultipleNodePCS" duration-ms="0" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC011setAlarmPCS" finished-at="2020-04-23T13:17:29 EDT">
+        <test-method status="SKIP" signature="TC012saveAndApplyMultipleNodePCS()[pri:12, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC012saveAndApplyMultipleNodePCS" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC011setAlarmPCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC012saveAndApplyMultipleNodePCS()[pri:12, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC012saveAndApplyMultipleNodePCS()[pri:12, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC012saveAndApplyMultipleNodePCS -->
-        <test-method status="PASS" signature="TC013setCycleTimePCS()[pri:13, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC013setCycleTimePCS" duration-ms="1" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC012saveAndApplyMultipleNodePCS" finished-at="2020-04-23T13:17:29 EDT">
+        <test-method status="SKIP" signature="TC013setCycleTimePCS()[pri:13, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC013setCycleTimePCS" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC012saveAndApplyMultipleNodePCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC013setCycleTimePCS()[pri:13, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC013setCycleTimePCS()[pri:13, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC013setCycleTimePCS -->
-        <test-method status="PASS" signature="TC014setScheduleTypePCS()[pri:14, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC014setScheduleTypePCS" duration-ms="1" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC013setCycleTimePCS" finished-at="2020-04-23T13:17:29 EDT">
+        <test-method status="SKIP" signature="TC014setScheduleTypePCS()[pri:14, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC014setScheduleTypePCS" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC013setCycleTimePCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC014setScheduleTypePCS()[pri:14, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC014setScheduleTypePCS()[pri:14, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC014setScheduleTypePCS -->
-        <test-method status="PASS" signature="TC015loginValidatePOP()[pri:15, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC015loginValidatePOP" duration-ms="17988" started-at="2020-04-23T13:17:29 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC014setScheduleTypePCS" finished-at="2020-04-23T13:17:47 EDT">
+        <test-method status="SKIP" signature="TC015loginValidatePOP()[pri:15, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC015loginValidatePOP" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC014setScheduleTypePCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC015loginValidatePOP()[pri:15, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC015loginValidatePOP()[pri:15, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC015loginValidatePOP -->
-        <test-method status="PASS" signature="TC016checkCamerasPOP()[pri:16, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC016checkCamerasPOP" duration-ms="11256" started-at="2020-04-23T13:17:47 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC015loginValidatePOP" finished-at="2020-04-23T13:17:58 EDT">
+        <test-method status="SKIP" signature="TC016checkCamerasPOP()[pri:16, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC016checkCamerasPOP" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC015loginValidatePOP" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC016checkCamerasPOP()[pri:16, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC016checkCamerasPOP()[pri:16, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC016checkCamerasPOP -->
-        <test-method status="PASS" signature="TC017createNewCameraPOP()[pri:17, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC017createNewCameraPOP" duration-ms="870" started-at="2020-04-23T13:17:58 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC016checkCamerasPOP" finished-at="2020-04-23T13:17:59 EDT">
+        <test-method status="SKIP" signature="TC017createNewCameraPOP()[pri:17, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC017createNewCameraPOP" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC016checkCamerasPOP" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC017createNewCameraPOP()[pri:17, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC017createNewCameraPOP()[pri:17, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC017createNewCameraPOP -->
-        <test-method status="PASS" signature="TC018deleteAllNodesPCS()[pri:18, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC018deleteAllNodesPCS" duration-ms="4298" started-at="2020-04-23T13:17:59 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC017createNewCameraPOP" finished-at="2020-04-23T13:18:03 EDT">
+        <test-method status="SKIP" signature="TC018createDisplayGroupPOP()[pri:18, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC018createDisplayGroupPOP" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC017createNewCameraPOP" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC018createDisplayGroupPOP()[pri:18, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC018createDisplayGroupPOP()[pri:18, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC018createDisplayGroupPOP -->
+        <test-method status="SKIP" signature="TC018deleteAllNodesPCS()[pri:18, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC018deleteAllNodesPCS" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC017createNewCameraPOP" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC018deleteAllNodesPCS()[pri:18, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC018deleteAllNodesPCS()[pri:18, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC018deleteAllNodesPCS -->
-        <test-method status="PASS" signature="TC019setGlobalUnitMeasureToInchesPCS()[pri:19, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="TC019setGlobalUnitMeasureToInchesPCS" duration-ms="1068" started-at="2020-04-23T13:18:03 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC018deleteAllNodesPCS" finished-at="2020-04-23T13:18:04 EDT">
+        <test-method status="SKIP" signature="TC019checkDisplayGroupPOP()[pri:19, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC019checkDisplayGroupPOP" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC018createDisplayGroupPOP" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC019checkDisplayGroupPOP()[pri:19, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC019checkDisplayGroupPOP()[pri:19, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC019checkDisplayGroupPOP -->
+        <test-method status="SKIP" signature="TC019setGlobalUnitMeasureToInchesPCS()[pri:19, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="TC019setGlobalUnitMeasureToInchesPCS" duration-ms="0" started-at="2020-06-29T15:45:25 EDT" depends-on-methods="src.com.example.tests.RegressionTestPCS.TC018deleteAllNodesPCS" finished-at="2020-06-29T15:45:25 EDT">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method RegressionTestPCS.TC019setGlobalUnitMeasureToInchesPCS()[pri:19, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method RegressionTestPCS.TC019setGlobalUnitMeasureToInchesPCS()[pri:19, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC019setGlobalUnitMeasureToInchesPCS -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:src.com.example.tests.RegressionTestPCS@3108bc]" name="tearDown" is-config="true" duration-ms="628" started-at="2020-04-23T13:18:04 EDT" finished-at="2020-04-23T13:18:05 EDT">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:src.com.example.tests.RegressionTestPCS@6aeb35e6]" name="tearDown" is-config="true" duration-ms="610" started-at="2020-06-29T15:45:25 EDT" finished-at="2020-06-29T15:45:26 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

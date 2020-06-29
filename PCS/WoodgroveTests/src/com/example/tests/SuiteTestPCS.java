@@ -179,6 +179,7 @@ public class SuiteTestPCS{
 	    System.out.println("Number of elements:" +listOfElements.size());
 	    for (int i=0; i < listOfElements.size();i++){
 	    	System.out.println(i);
+	    	Thread.sleep(10000);
 	    	WebElement elements = listOfElements.get(i).findElement(By.id("tableNodeID"));
 	    	WebElement elements2 = listOfElements.get(i).findElement(By.id("btnEditNode"));
 	    	String nodeName = elements.getText().toString();       	
@@ -799,7 +800,7 @@ public class SuiteTestPCS{
 	}		
 	
 	public void setGlobalUnitMeasureToCm() throws Exception {
-		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 50);
+		WebDriverWait waitbtnHome = new WebDriverWait(RegressionTestPCS.driver, 80);
 		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
 		String link = btnHome.getAttribute("href");
 		RegressionTestPCS.driver.get(link);	
@@ -807,11 +808,14 @@ public class SuiteTestPCS{
 		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSettings")));
 		button.click();
 		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnGlobalVariables")));
-		button.click();			
-		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("inputUnit")));
-		button.click();
-		button.sendKeys("cm");	    	
-		button.click();	
+		button.click();		
+		
+		WebDriverWait wait44 = new WebDriverWait(RegressionTestPCS.driver, 80);	
+		WebElement input2 = wait44.until(ExpectedConditions.elementToBeClickable(By.id("opt_Eu_Units")));
+		input2.click();
+		input2.sendKeys("c");	    	
+		input2.click();	
+		
 		button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveAll")));
 		button.click();			
 		new WebDriverWait(RegressionTestPCS.driver, 40).until(ExpectedConditions.alertIsPresent());
@@ -832,7 +836,7 @@ public class SuiteTestPCS{
 		WebElement btnHome = waitbtnHome.until(ExpectedConditions.elementToBeClickable(By.id("btnHome")));
 		String link = btnHome.getAttribute("href");
 		RegressionTestPCS.driver.get(link);	
-		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 40);	
+		WebDriverWait wait = new WebDriverWait(RegressionTestPCS.driver, 60);	
 		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSettings")));
 		button.click();
 		
@@ -1483,6 +1487,103 @@ public class SuiteTestPCS{
 		waitBtnSaveCam = new WebDriverWait(RegressionTestPCS.driver, 10);
 		btnSaveCam = waitBtnSaveCam.until(ExpectedConditions.elementToBeClickable(By.id("bntSaveCamera")));
 		btnSaveCam.click();	
+	}
+	
+	public void createDisplayGroup() throws Exception {
+		WebDriverWait waitbtnSidebarGroup = new WebDriverWait(RegressionTestPCS.driver, 10);
+		WebElement btnSidebarGroup = waitbtnSidebarGroup.until(ExpectedConditions.elementToBeClickable(By.id("btnSidebarGroup")));
+		btnSidebarGroup.click();
+		
+		//Try to save a group with no information
+		RegressionTestPCS.driver.findElement(By.id("btnNewGroup")).click();
+		RegressionTestPCS.driver.findElement(By.id("btnSaveGroup")).click();
+		WebElement text = RegressionTestPCS.driver.findElement(By.id("msgGroupUnsaved"));
+	    Boolean m = new WebDriverWait(RegressionTestPCS.driver, 10).until(ExpectedConditions.textToBePresentInElement(text,"Groups Edited - Unsaved"));
+	    if(m.equals(true)) {
+	    	System.out.println("Groups Edited - Unsaved");
+	    }			
+		//Save a group with display view
+	    RegressionTestPCS.driver.findElement(By.id("groupName")).clear();
+	    RegressionTestPCS.driver.findElement(By.id("groupName")).sendKeys("Display");
+	    RegressionTestPCS.driver.findElement(By.id("viewType")).click();
+	    RegressionTestPCS.driver.findElement(By.id("viewType")).sendKeys(" Display ");
+	    RegressionTestPCS.driver.findElement(By.id("viewType")).click();
+	    RegressionTestPCS.driver.findElement(By.id("groupSearchCam")).clear();
+	    RegressionTestPCS.driver.findElement(By.id("groupSearchCam")).sendKeys("PFC");			
+		
+		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("tableSearchCameras"));
+	    System.out.println("Number of elements:" +listOfElements.size());
+	    if(listOfElements.isEmpty()) {
+	    	System.out.println("Number of elements:" +listOfElements.size());
+	    	fail();
+	    }
+	    for (int i=0; i < listOfElements.size();i++){
+	    	WebElement searchCamera =  listOfElements.get(i).findElement(By.id("searchCamera"));
+	    	String nameCamera = searchCamera.getText().toString();	
+	    	WebElement btnAddSearchCamera = listOfElements.get(i).findElement(By.id("btnAddSearchCamera"));
+	    	if(nameCamera.equals("add_circle\n" + "nodePFC")) {
+	    		System.out.println(nameCamera);
+	    		btnAddSearchCamera.click();
+	    		break;
+	    	}else {
+	    		System.out.println("Didn't find the button");
+	    		fail();
+	    	}
+	    }
+	    
+	    RegressionTestPCS.driver.findElement(By.id("groupSearchCam")).clear();
+	    RegressionTestPCS.driver.findElement(By.id("groupSearchCam")).sendKeys("PRC");			
+		
+		List <WebElement> listOfElements2 = RegressionTestPCS.driver.findElements(By.id("tableSearchCameras"));
+	    System.out.println("Number of elements:" +listOfElements2.size());
+	    if(listOfElements2.isEmpty()) {
+	    	System.out.println("Number of elements:" +listOfElements2.size());
+	    	fail();
+	    }
+	    for (int i=0; i < listOfElements2.size();i++){
+	    	WebElement searchCamera =  listOfElements2.get(i).findElement(By.id("searchCamera"));
+	    	String nameCamera = searchCamera.getText().toString();	
+	    	WebElement btnAddSearchCamera = listOfElements2.get(i).findElement(By.id("btnAddSearchCamera"));
+	    	if(nameCamera.equals("add_circle\n" + "nodePRC")) {
+	    		System.out.println(nameCamera);
+	    		btnAddSearchCamera.click();
+	    		break;
+	    	}else {
+	    		System.out.println("Didn't find the button");
+	    		fail();
+	    	}
+	    }
+
+		WebDriverWait waitBtnSaveCam = new WebDriverWait(RegressionTestPCS.driver, 10);
+		WebElement btnSaveCam = waitBtnSaveCam.until(ExpectedConditions.elementToBeClickable(By.id("btnSaveGroup")));
+		btnSaveCam.click();			
+	}
+	
+	public void checkDisplayGroup() throws Exception {
+		List <WebElement> listOfElements = RegressionTestPCS.driver.findElements(By.id("viewGroups"));
+	    System.out.println("Number of elements:" +listOfElements.size());
+	    for (int i=0; i < listOfElements.size();i++){
+	    	WebElement searchView =  listOfElements.get(i).findElement(By.id("nameViewGroup"));
+	    	String nameGroup = searchView.getText().toString();	    	
+	    	WebElement btnViewGroup =  listOfElements.get(i).findElement(By.id("btnViewGroup"));
+	    	if(nameGroup.equals("Display")) {
+	    		System.out.println(nameGroup);
+	    		btnViewGroup.click();		    		
+	    		break;
+	    	}    
+	    }
+	    List <WebElement> listOfElements2 = RegressionTestPCS.driver.findElements(By.id("groupDisplay"));
+	    System.out.println("Number of elements:" +listOfElements2.size());
+	    if(listOfElements2.isEmpty()) {
+	    	System.out.println("Number of elements:" +listOfElements2.size());
+	    	fail();
+	    }
+	    
+	    for (int i=0; i < listOfElements2.size();i++){
+	    	WebElement camView =  listOfElements2.get(i).findElement(By.id("nameCamView"));
+	    	String nameCamView = camView.getText().toString();	
+	    		System.out.println(nameCamView);   	
+	    }	
 	}
 	
 }
