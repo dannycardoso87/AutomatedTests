@@ -845,10 +845,10 @@ public class SuiteTestPCS{
 		button.click();	
 		WebElement input = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("inputRawImages")));
 		input.clear();
-		input.sendKeys("1");
+		input.sendKeys("3");
 		input = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("inputProcessedImages")));
 		input.clear();
-		input.sendKeys("1");
+		input.sendKeys("3");
 		
 		List <WebElement> checkboxNode = RegressionTestPCS.driver.findElements(By.id("checkboxNode"));
 	    System.out.println("Number of elements:" +checkboxNode.size());
@@ -875,10 +875,12 @@ public class SuiteTestPCS{
 	    //get Snapshot from all nodes
 	    input = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("inputRawImages")));
 	    input.clear();
-	    input.sendKeys("1");
+	    input.sendKeys("2");
 	    input = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("inputProcessedImages")));
 	    input.clear();
 	    input.sendKeys("2");
+	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnSelectNone")));
+	    button.click();
 	    button = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnSelectAll")));
 	    button.click();
 	    button = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnTakeSnapshot")));

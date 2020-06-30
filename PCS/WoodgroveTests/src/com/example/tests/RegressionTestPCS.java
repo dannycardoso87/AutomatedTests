@@ -28,9 +28,10 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	public static String usernameCamera;
 	public static String passwordCamera;
 	public static StringBuffer verificationErrors = new StringBuffer(); 
-	public final String pathChromeDriver = "C:\\Projects\\AutomatedTests\\Package\\chromedriver.exe";  	
+	//Test eclipse
+	//public final String pathChromeDriver = "C:\\Projects\\AutomatedTests\\Package\\chromedriver.exe";  	
 	//Test VM
-	//private final String pathChromeDriver =  "C:\\PCSNightlyBuild\\Tests\\chromedriver.exe";    
+	private final String pathChromeDriver =  "C:\\PCSNightlyBuild\\Tests\\chromedriver.exe";    
 	public static String nodeName1;
 	public static String nodeName2;
 	public static String nodeName3;
@@ -45,7 +46,10 @@ public class RegressionTestPCS extends SuiteTestPCS {
 		baseUrlPCS = "https://localhost:3002/"; 		
 		baseUrlPOP = "https://localhost/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		urlCamera = "C:\\Users\\Danielly Cardoso\\Documentos\\Woodgrove\\PCS\\Arquivos de config para teste\\PRC\\raw_images"; 
+		//Test eclipse
+		//urlCamera = "C:\\Users\\Danielly Cardoso\\Documentos\\Woodgrove\\PCS\\Arquivos de config para teste\\PRC\\raw_images"; 
+		//Test VM
+		urlCamera = "C:\\Users\\Woodgrove\\Desktop\\Test\\Images"; 
 		usernameCamera = "axis";
 		passwordCamera = "root";
 		nodeName1 = "nodePRC";
@@ -62,32 +66,32 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=2, dependsOnMethods = { "TC001loginValidatePCS" })
 	public void TC002createNodePCS() throws Exception	{
-		//createNode();			
+		createNode();			
 	}
 	
 	@Test (priority=3, dependsOnMethods = { "TC002createNodePCS" })
 	public void TC003createExistingNodePCS() throws Exception	{
-		//createExistingNode();			
+		createExistingNode();			
 	}
 	
 	@Test (priority=4, dependsOnMethods = { "TC003createExistingNodePCS" })
 	public void TC004deleteNodePCS() throws Exception	{
-		//deleteNode();			
+		deleteNode();			
 	}
 		
 	@Test (priority=5, dependsOnMethods = { "TC004deleteNodePCS" })
 	public void TC005editNodePCS() throws Exception	{
-		//editNode();			
+		editNode();			
 	}
 	
 	@Test (priority=6, dependsOnMethods = { "TC005editNodePCS" })
 	public void TC006statusCheckPCS() throws Exception	{
-		//statusCheck();			
+		statusCheck();			
 	}
 	
 	@Test (priority=7, dependsOnMethods = { "TC006statusCheckPCS" })
 	public void TC007setSchedulerAllNodesPCS() throws Exception{
-		//setSchedulerAllNodes();
+		setSchedulerAllNodes();
 	}	
 	
 	@Test (priority=8, dependsOnMethods = { "TC007setSchedulerAllNodesPCS" })
@@ -102,7 +106,7 @@ public class RegressionTestPCS extends SuiteTestPCS {
 	
 	@Test (priority=10, dependsOnMethods = { "TC009statusCheckPCS" })
 	public void TC010getSnapshotPCS() throws Exception {
-		getSnapshot();			
+		//getSnapshot();			
 	}
 	
 	@Test (priority=11, dependsOnMethods = { "TC010getSnapshotPCS" })
